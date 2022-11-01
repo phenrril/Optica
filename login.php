@@ -1,83 +1,26 @@
-<?php require_once("conexiondb.php"); ?>
-<?php require("session.php"); ?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/cabecera.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+</head>
+<body>
+   <form action="validar.php" method="post">
+
+   <h1 class="animate__animated animate__backInLeft">OPTICA OJITO</h1>
+
+   <p>Usuario <input type="text" placeholder="ingrese su nombre" name="usuario"></p>
+
+   <p>Contraseña <input type="password" placeholder="ingrese su contraseña" name="contraseña"></p>
+   
+   <input type="submit" value="Ingresar">
+   
+   </form> 
+</body>
+</html>
 <?php
-	if(isset($_SESSION["dni_id"]))
-	{
-		header("Location: admin.php");
-		exit();
-	}
 ?>
-<?php
-	if(isset($_POST["dni"]))
-	{
-		$errores = array();
-		//$errores = array_merge($errores, validarCamposObligatorios(array("username", "password")));
-		$max_caracteres = array("dni" => 30, "password" => 30);
-		foreach($max_caracteres as $campo => $max)
-		{
-			if(strlen($_POST[$campo]) > $max)
-			{
-				$errores[] = $campo;
-			}
-		}
-
-		$dni = trim($_POST["dni"]);
-		$password = sha1(trim($_POST["password"]));
-		
-		if(empty($errores))
-		{
-			$consulta = "SELECT * 
-										FROM usuarios 
-										
-										WHERE dni = '{$dni}'
-										AND password = '{$password}'
-										LIMIT 1";
-			$resultado = mysql_query($consulta, $conexion);
-			
-			
-			if(mysql_affected_rows() == 1)
-			{
-				$usuario = mysql_fetch_array($resultado);
-				$_SESSION["dni_id"] = $usuario["dni"];
-				//$_SESSION["nombre_id"] = $usuario["password"];
-				header("Location: admin.php");
-				exit();
-			}
-			else
-			{
-				$mensaje = "usuario incorrecto, intente nuevamente: " . mysql_error();
-			}
-		}
-		else
-		{
-			$mensaje = "Se han encontrado " . count($errores) . " errores";
-		}
-	}
-?>
-
-
-		<table id="estructura">
-			<tr>
-				<td id="menu">
-					<!--<a href="admin.php">Regresar al menú principal</a>-->
-				</td>
-				<td id="pagina">
-					<h2>Administración</h2>
-					<?php if(isset($mensaje)) { echo "<p>" . $mensaje . "</p>"; } ?>
-					<form action="login.php" method="post">
-					<table>
-						<tr>
-							<td>Nombre de Usuario:</td>
-							<td><input type="text" name="dni"></td>
-						</tr>
-						<tr>
-							<td>Contraseña:</td>
-							<td><input type="password" name="password"></td>
-						</tr>
-					</table>
-					<input type="submit" value="Ingresar">
-					</form>
-				</td>
-			</tr>	
-		</table>
-
