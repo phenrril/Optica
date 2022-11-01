@@ -164,90 +164,228 @@
                 <!-- End of Topbar -->
 
 
-                <!-- Tabla Ojo D Ojo I graduaciones  -->
-                <table class="table table-borderless" style="width:750px;">
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Cliente</th>
+                            <td></td>
+                            <td></td>
+                            <th>Id cristal</th>
+                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                        </tr>
+                        <tr>
+                            <td>id cliente</td>
+                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                            <td>Cod Producto</td>
+                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td>Nombre producto</td>
+                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+
+                        </tr>
+                    </thead>
                     <tbody>
-                    <tr>
-                        <td></td>
-                            <td></td>
-                            <td>Id Cliente</td>
-                            <td></td>
-                            <td></td>
-                            
-                            <td style="width:150px;"><input id="text" disabled name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                        </tr>
                         <tr>
-                        <td></td>
-                            <td></td>
                             <td>Nombre</td>
-                            <td></td>
-                            <td></td>
-                            <td><input id="text" disabled name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                            <td>Cristales</td>
+                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td>Precio Cristales</td>
+                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+
                         </tr>
                         <tr>
-                        <td></td>
-                            <td></td>
                             <td>Apellido</td>
-                            <td></td>
-                            <td></td>
-                            <td><input id="text" disabled name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                            <td>Observaciones</td>
+                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td>Tipo Lentes</td>
+                            <td>
+                                <div class="col-6">
+                                    <select id="select" name="select" class="custom-select">
+                                        <option value="rabbit">Bifocales</option>
+                                        <option value="duck">Multifocales</option>
+                                        <option value="fish">Lentes de Sol</option>
+                                        <option value="rabbit">LDS - Bifocales</option>
+                                        <option value="duck">Fantasia</option>
+                                        <option value="fish">Otro</option>
+                                    </select>
+                            </td>
                         </tr>
                         <tr>
-                        <td></td>
+                            </td>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th scope="row"><button name="submit" type="submit" class="btn btn-primary">Agregar</button></th>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Tabla Ojo D Ojo I graduaciones  -->
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th>Graduacion Lejos</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <th>Articulos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ojo D</td>
+                            <td></td>
+                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td></td>
+                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td></td>
+                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td></td>
                             <td></td>
                             <td>Producto Sel</td>
-                            
+                            <td style="width:250px;"><button name="submit" type="submit" class="btn btn-primary">Cancelar</button></td>
                             <td style="width:100px;">Precio</td>
-                            <td style="width:100px;"><input id="text" disabled name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
                         </tr>
                         <tr>
-                        <td></td>
+                            <td>Ojo I</td>
+                            <td></td>
+                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td></td>
+                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td></td>
+                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td></td>
                             <td></td>
                             <td>Producto Sel</td>
-                           
+                            <td style="width:250px;"><button name="submit" type="submit" class="btn btn-primary">Cancelar</button></td>
                             <td style="width:100px;">Precio</td>
-                            <td style="width:100px;"><input id="text" disabled name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
                         </tr>
                         <tr>
-                        <td></td>
+                            <th>Graduacion Cerca</th>
+                            <td>ADD:
+                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <td></td>
                             <td>Producto Sel</td>
-                            
+                            <td style="width:250px;"><button name="submit" type="submit" class="btn btn-primary">Cancelar</button></td>
                             <td style="width:100px;">Precio</td>
-                            <td style="width:100px;"><input id="text" disabled name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
                         </tr>
                         <tr>
-                        <td></td>
+                            <td>Ojo D</td>
+                            <td></td>
+                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td></td>
+                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td></td>
+                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td></td>
                             <td></td>
                             <td>Producto Sel</td>
-                            
+                            <td style="width:250px;"><button name="submit" type="submit" class="btn btn-primary">Cancelar</button></td>
                             <td style="width:100px;">Precio</td>
-                            <td style="width:100px;"><input id="text" disabled name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
                         </tr>
                         <tr>
-                        <td></td>
+                            <td style="width:60px;">Ojo I </td>
+                            <td style="width:60px;"></td>
+                            <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td style="width:60px;"></td>
+                            <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td style="width:60px;"></td>
+                            <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td></td>
                             <td></td>
                             <td>Producto Sel 2</td>
-                           
+                            <td style="width:250px;"><button name="submit" type="submit" class="btn btn-primary">Cancelar</button></td>
                             <td style="width:100px;">Precio</td>
-                            <td style="width:100px;"><input id="text" disabled name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
                         </tr>
                         <tr>
-                        <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <td></td>
                             <th>Descuento en %</th>
-                            <td style="width:100px;"><input id="text" disabled name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                            <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
                         </tr>
                         <tr>
                             <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <th>Total</th>
-                            <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                            <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
                             <th>Resta</th>
                             <td style="width:250px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
 
 
                         </tr>
-                        
+                        <tr>
+                            <th scope="row"> </th>
+                        </tr>
+                        <tr>
+                            <th scope="row">Metodo de pago</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input name="radio" id="radio_0" type="radio" class="custom-control-input" value="Efectivo">
+                                    <label for="radio_0" class="custom-control-label">Efectivo</label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input name="radio" id="radio_1" type="radio" class="custom-control-input" value="Debito">
+                                    <label for="radio_1" class="custom-control-label">Debito</label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input name="radio" id="radio_2" type="radio" class="custom-control-input" value="Credito">
+                                    <label for="radio_2" class="custom-control-label">Credito</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><button name="submit" type="submit" class="btn btn-primary">Enviar</button></td>
+                            <td><button name="submit" type="submit" class="btn btn-primary">Cancel</button></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Pedido<input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                        </tr>
                     </tbody>
                 </table>
 

@@ -22,7 +22,7 @@
 
 <body id="page-top">
 
-    <? php/* session_start(); 
+    <?php /* session_start(); 
 
  if (isset($_SESSION['name'])){
      $_SESSION['name']; 
@@ -91,6 +91,13 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider">
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="pedidos.php">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Pedidos</span></a>
+            </li>
 
 
             <!-- Sidebar Toggler (Sidebar) -->
@@ -165,163 +172,230 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Content Row -->
-                    <div class="row">
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Cliente</th>
+                                <td></td>
+                                <td></td>
+                                <th>Id cristal</th>
+                                <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            </tr>
+                            <tr>
+                                <td>id cliente</td>
+                                <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                                <td>Cod Producto</td>
+                                <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                                <td>Nombre producto</td>
+                                <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
 
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Earnings (Monthly)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Nombre</td>
+                                <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                                <td>Cristales</td>
+                                <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                                <td>Precio Cristales</td>
+                                <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
 
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Earnings (Annual)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            </tr>
+                            <tr>
+                                <td>Apellido</td>
+                                <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                                <td>Observaciones</td>
+                                <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                                <td>Tipo Lentes</td>
+                                <td>
+                                    <div class="col-6">
+                                        <select id="select" name="select" class="custom-select">
+                                            <option value="rabbit">Bifocales</option>
+                                            <option value="duck">Multifocales</option>
+                                            <option value="fish">Lentes de Sol</option>
+                                            <option value="rabbit">LDS - Bifocales</option>
+                                            <option value="duck">Fantasia</option>
+                                            <option value="fish">Otro</option>
+                                        </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                </td>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th scope="row"><button name="submit" type="submit" class="btn btn-primary">Agregar</button></th>
 
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                        <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Pending Requests</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Tabla Ojo D Ojo I graduaciones  -->
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th>Graduacion Lejos</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <th>Articulos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ojo D</td>
+                                <td></td>
+                                <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                                <td></td>
+                                <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                                <td></td>
+                                <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                                <td></td>
+                                <td></td>
+                                <td>Producto Sel</td>
+                                <td style="width:250px;"><button name="submit" type="submit" class="btn btn-primary">Cancelar</button></td>
+                                <td style="width:100px;">Precio</td>
+                                <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            </tr>
+                            <tr>
+                                <td>Ojo I</td>
+                                <td></td>
+                                <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                                <td></td>
+                                <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                                <td></td>
+                                <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                                <td></td>
+                                <td></td>
+                                <td>Producto Sel</td>
+                                <td style="width:250px;"><button name="submit" type="submit" class="btn btn-primary">Cancelar</button></td>
+                                <td style="width:100px;">Precio</td>
+                                <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            </tr>
+                            <tr>
+                                <th>Graduacion Cerca</th>
+                                <td>ADD:
+                                <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Producto Sel</td>
+                                <td style="width:250px;"><button name="submit" type="submit" class="btn btn-primary">Cancelar</button></td>
+                                <td style="width:100px;">Precio</td>
+                                <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            </tr>
+                            <tr>
+                                <td>Ojo D</td>
+                                <td></td>
+                                <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                                <td></td>
+                                <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                                <td></td>
+                                <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                                <td></td>
+                                <td></td>
+                                <td>Producto Sel</td>
+                                <td style="width:250px;"><button name="submit" type="submit" class="btn btn-primary">Cancelar</button></td>
+                                <td style="width:100px;">Precio</td>
+                                <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:60px;">Ojo I </td>
+                                <td style="width:60px;"></td>
+                                <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                                <td style="width:60px;"></td>
+                                <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                                <td style="width:60px;"></td>
+                                <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                                <td></td>
+                                <td></td>
+                                <td>Producto Sel 2</td>
+                                <td style="width:250px;"><button name="submit" type="submit" class="btn btn-primary">Cancelar</button></td>
+                                <td style="width:100px;">Precio</td>
+                                <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <th>Descuento en %</th>
+                                <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <th>Total</th>
+                                <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                                <th>Resta</th>
+                                <td style="width:250px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
 
-                    <!-- Content Row -->
 
-                    <div class="row">
-
-                        <!-- Area Chart -->
-                        <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
+                            </tr>
+                            <tr>
+                                <th scope="row"> </th>
+                            </tr>
+                            <tr>
+                                <th scope="row">Metodo de pago</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input name="radio" id="radio_0" type="radio" class="custom-control-input" value="Efectivo">
+                                        <label for="radio_0" class="custom-control-label">Efectivo</label>
                                     </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
+                                </td>
+                                <td>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input name="radio" id="radio_1" type="radio" class="custom-control-input" value="Debito">
+                                        <label for="radio_1" class="custom-control-label">Debito</label>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Pie Chart -->
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
+                                </td>
+                                <td>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input name="radio" id="radio_2" type="radio" class="custom-control-input" value="Credito">
+                                        <label for="radio_2" class="custom-control-label">Credito</label>
                                     </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2">
-                                        <canvas id="myPieChart"></canvas>
-                                    </div>
-
-                                    <div class="mt-4 text-center small">
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Direct
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> Social
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Referral
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><button name="submit" type="submit" class="btn btn-primary">Enviar</button></td>
+                                <td><button name="submit" type="submit" class="btn btn-primary">Cancel</button></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Pedido<input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                            </tr>
+                        </tbody>
+                    </table>
 
 
                 </div>
