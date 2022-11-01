@@ -59,10 +59,10 @@
 		<table id="estructura">
 			<tr>
 				<td id="menu">
-					<!--<a href="admin.php">Regresar al menu principal</a>-->
+					<!--<a href="admin.php">Regresar al menú principal</a>-->
 				</td>
 				<td id="pagina">
-					<h2>AdministraciÃ³n</h2>
+					<h2>Administración</h2>
 					<?php if(isset($mensaje)) { echo "<p>" . $mensaje . "</p>"; } ?>
 					<form action="login.php" method="post">
 					<table>
@@ -71,7 +71,7 @@
 							<td><input type="text" name="dni"></td>
 						</tr>
 						<tr>
-							<td>ContraseÃ±a:</td>
+							<td>Contraseña:</td>
 							<td><input type="password" name="password"></td>
 						</tr>
 					</table>
@@ -80,3 +80,4 @@
 				</td>
 			</tr>	
 		</table>
+
