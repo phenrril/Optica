@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/cabecera.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
-</head>
+</head> 
+
 <body>
    <form action="validar.php" method="post">
 
@@ -15,7 +16,7 @@
 
    <p>Usuario <input type="text" placeholder="ingrese su nombre" name="usuario"></p>
 
-   <p>Contraseña <input type="password" placeholder="ingrese su contraseña" name="contraseña"></p>
+   <p>Contraseï¿½a <input type="password" placeholder="ingrese su contraseï¿½a" name="contraseï¿½a"></p>
    
    <input type="submit" value="Ingresar">
    
