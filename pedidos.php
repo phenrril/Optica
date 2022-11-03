@@ -63,13 +63,10 @@
 
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <li class="nav-item">
-                <a class="nav-link" href="ventas.php">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Ventas</span></a>
-            </li>
+            <?php if ($_SESSION['id_Cargo'] == 1) {
+                echo "<hr class='sidebar-divider'><li class='nav-item'><a class='nav-link' href='ventas.php'><i class='fas fa-fw fa-cog'></i><span>Ventas</span></a></li>";
+            }
+            ?>
 
             <hr class="sidebar-divider">
 

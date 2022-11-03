@@ -63,14 +63,11 @@
 
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <li class="nav-item">
-                <a class="nav-link" href="ventas.php">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Ventas</span></a>
-            </li>
-
+            <?php if ($_SESSION['id_Cargo'] == 1) {
+                echo "<hr class='sidebar-divider'><li class='nav-item'><a class='nav-link' href='ventas.php'><i class='fas fa-fw fa-cog'></i><span>Ventas</span></a></li>";
+            }
+            ?>
+            
             <hr class="sidebar-divider">
 
             <!-- Nav Item - Charts -->
@@ -212,7 +209,8 @@
                                     </select>
                             </td>
                         </tr>
-                        <tr></td>
+                        <tr>
+                            </td>
                             <th></th>
                             <th></th>
                             <th></th>
@@ -271,7 +269,8 @@
                         </tr>
                         <tr>
                             <th>Graduacion Cerca</th>
-                            <td>ADD:<td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
+                            <td>ADD:
+                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
                             <td></td>
                             <td></td>
                             <td></td>
