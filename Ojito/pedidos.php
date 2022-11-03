@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+session_start();
+if (!empty($_SESSION['id'])) {
+  //echo "positivo";
+} else {
+    header("location: ../index.php");
+}
 
+ ?>
 <head>
 
     <meta charset="utf-8">
@@ -33,7 +41,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Berazateguis<sup>tm</sup></div>
+                <div class="sidebar-brand-text mx-3">Ojito de Sol<sup>tm</sup></div>
             </a>
 
             <!-- Divider -->
@@ -129,7 +137,7 @@
                             <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Nombre User</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['usuario']; ?></span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- user info -->
@@ -418,7 +426,7 @@
                             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                             <div class="modal-footer">
                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                                <a class="btn btn-primary" href="login.html">Logout</a>
+                                <a class="btn btn-primary" href="../controlador/cerrar_sesion.php">Logout</a>
                             </div>
                         </div>
                     </div>

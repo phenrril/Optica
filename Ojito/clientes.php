@@ -1,5 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<?php 
+session_start();
+if (!empty($_SESSION['id'])) {
+  //echo "positivo";
+} else {
+    header("location: ../index.php");
+}
+
+ ?>
+<html lang="es">
 
 <head>
 
@@ -42,7 +51,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Berazateguis<sup>tm</sup></div>
+                <div class="sidebar-brand-text mx-3">Ojito de Sol<sup>tm</sup></div>
             </a>
 
             <!-- Divider -->
@@ -135,7 +144,7 @@
                             <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['name']; ?></span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['usuario']; ?></span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- user info -->
@@ -154,9 +163,9 @@
                                     Activity Log
                                 </a> -->
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="logout.php" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="controlador/cerrar_sesion.php" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                    Logoutrr
                                 </a>
                             </div>
                         </li>
@@ -438,7 +447,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="logout.php">Logout</a>
+                    <a class="btn btn-primary" href="../controlador/cerrar_sesion.php">Logout</a>
                 </div>
             </div>
         </div>
