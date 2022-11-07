@@ -121,7 +121,7 @@ header a{
     transition: all ease 300ms;
 }
 .login-box{
-	background-image:url(../IMG/portada.png);
+	background-image:url(/IMG/ojito.png);
 	width: 100px;
 	height: 100px;
 	border-radius: 50%;
