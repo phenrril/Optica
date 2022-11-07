@@ -120,7 +120,7 @@ if (!empty($_SESSION['id'])) {
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['usuario']; ?></span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="css/circulo.png">
                             </a>
                             <!-- user info -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in">
@@ -149,62 +149,29 @@ if (!empty($_SESSION['id'])) {
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <table width="90" align="center">
-                        <tr>
-                            <th scope="row"><button name="submit" type="submit" class="btn btn-primary">Agregar</button></th>
-                            <th scope="row"><button name="submit" type="submit" class="btn btn-primary">Agregar</button></th>
-                        </tr>
-                    </table>
-
                     <table WIDTH="90%" align="center" >
                         <tr>
                             <td>
-                                <table WIDTH="80%" class="table table-borderless" id="crearcliente">
+                            <table WIDTH="80%" class="table table-borderless" id="buscarcliente">
                                     <tr>
-                                        <td>
-                                        <th>Cliente</th>
+                                        <th>Busqueda de Clientes</th>
                                     </tr>
                                     <tr>
-                                        <td>id cliente</td>
-                                        <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                                        <td>DNI</td>
+                                        <td><input id="text" placeholder="coloque DNI" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" ></td>
                                     </tr>
-                                    <tbody>
-                                        <tr>
-                                            <td>Nombre</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Apellido</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
-                                        </tr>
-                                        <tr>
-                                            <td>DNI</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Domicilio</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Telefono</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Obra Social</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Medico</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                                            <th scope="row"><button name="submit" type="submit" class="btn btn-primary">Buscar Cliente</button></th>
+                                            <th scope="row"><button name="submit" type="submit" class="btn btn-primary">Agregar Cliente</button></th>
                                         </tr>
                                     </tbody>
                                 </table>
                             </td>
                             <td>
-                                <table WIDTH="80%" class="table table-borderless" id="buscarcliente">
+                                
+                                <table WIDTH="80%" class="table table-borderless" id="crearcliente">
                                     <tr>
-                                        <th></th>
-                                        <th>Cliente</th>
+                                        <td>
+                                        <th>Nuevo Cliente</th>
                                     </tr>
                                     <tr>
                                         <td>id cliente</td>
@@ -238,6 +205,7 @@ if (!empty($_SESSION['id'])) {
                                         <tr>
                                             <td>Medico</td>
                                             <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                                            <th scope="row"><button name="submit" type="submit" class="btn btn-primary">Agregar Cliente</button></th>
                                         </tr>
                                     </tbody>
                                 </table>
