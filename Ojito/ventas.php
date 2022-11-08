@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php 
+<?php
 session_start();
 if (!empty($_SESSION['id'])) {
-  //echo "positivo";
+    //echo "positivo";
 } else {
     header("location: ../index.php");
 }
 
- ?>
+?>
+
 <head>
 
     <meta charset="utf-8">
@@ -169,232 +170,60 @@ if (!empty($_SESSION['id'])) {
 
                 </nav>
                 <!-- End of Topbar -->
-
-                <table class="table table-borderless">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Cliente</th>
-                            <td></td>
-                            <td></td>
-                            <th>Id cristal</th>
-                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                        </tr>
-                        <tr>
-                            <td>id cliente</td>
-                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
-                            <td>Cod Producto</td>
-                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                            <td>Nombre producto</td>
-                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Nombre</td>
-                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
-                            <td>Cristales</td>
-                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                            <td>Precio Cristales</td>
-                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-
-                        </tr>
-                        <tr>
-                            <td>Apellido</td>
-                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
-                            <td>Observaciones</td>
-                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                            <td>Tipo Lentes</td>
-                            <td>
-                                <div class="col-6">
-                                    <select id="select" name="select" class="custom-select">
-                                        <option value="rabbit">Bifocales</option>
-                                        <option value="duck">Multifocales</option>
-                                        <option value="fish">Lentes de Sol</option>
-                                        <option value="rabbit">LDS - Bifocales</option>
-                                        <option value="duck">Fantasia</option>
-                                        <option value="fish">Otro</option>
-                                    </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            </td>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th scope="row"><button name="submit" type="submit" class="btn btn-primary">Agregar</button></th>
-
-                        </tr>
-                    </tbody>
-                </table>
-
-                <!-- Tabla Ojo D Ojo I graduaciones  -->
-                <table class="table table-borderless">
-                    <thead>
-                        <tr>
-                            <th>Graduacion Lejos</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <th>Articulos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Ojo D</td>
-                            <td></td>
-                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                            <td></td>
-                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                            <td></td>
-                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                            <td></td>
-                            <td></td>
-                            <td>Producto Sel</td>
-                            <td style="width:250px;"><button name="submit" type="submit" class="btn btn-primary">Cancelar</button></td>
-                            <td style="width:100px;">Precio</td>
-                            <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                        </tr>
-                        <tr>
-                            <td>Ojo I</td>
-                            <td></td>
-                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                            <td></td>
-                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                            <td></td>
-                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                            <td></td>
-                            <td></td>
-                            <td>Producto Sel</td>
-                            <td style="width:250px;"><button name="submit" type="submit" class="btn btn-primary">Cancelar</button></td>
-                            <td style="width:100px;">Precio</td>
-                            <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                        </tr>
-                        <tr>
-                            <th>Graduacion Cerca</th>
-                            <td>ADD:
-                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>Producto Sel</td>
-                            <td style="width:250px;"><button name="submit" type="submit" class="btn btn-primary">Cancelar</button></td>
-                            <td style="width:100px;">Precio</td>
-                            <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                        </tr>
-                        <tr>
-                            <td>Ojo D</td>
-                            <td></td>
-                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                            <td></td>
-                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                            <td></td>
-                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                            <td></td>
-                            <td></td>
-                            <td>Producto Sel</td>
-                            <td style="width:250px;"><button name="submit" type="submit" class="btn btn-primary">Cancelar</button></td>
-                            <td style="width:100px;">Precio</td>
-                            <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                        </tr>
-                        <tr>
-                            <td style="width:60px;">Ojo I </td>
-                            <td style="width:60px;"></td>
-                            <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                            <td style="width:60px;"></td>
-                            <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                            <td style="width:60px;"></td>
-                            <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                            <td></td>
-                            <td></td>
-                            <td>Producto Sel 2</td>
-                            <td style="width:250px;"><button name="submit" type="submit" class="btn btn-primary">Cancelar</button></td>
-                            <td style="width:100px;">Precio</td>
-                            <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <th>Descuento en %</th>
-                            <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <th>Total</th>
-                            <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                            <th>Resta</th>
-                            <td style="width:250px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-
-
-                        </tr>
-                        <tr>
-                            <th scope="row"> </th>
-                        </tr>
-                        <tr>
-                            <th scope="row">Metodo de pago</th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input name="radio" id="radio_0" type="radio" class="custom-control-input" value="Efectivo">
-                                    <label for="radio_0" class="custom-control-label">Efectivo</label>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input name="radio" id="radio_1" type="radio" class="custom-control-input" value="Debito">
-                                    <label for="radio_1" class="custom-control-label">Debito</label>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input name="radio" id="radio_2" type="radio" class="custom-control-input" value="Credito">
-                                    <label for="radio_2" class="custom-control-label">Credito</label>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><button name="submit" type="submit" class="btn btn-primary">Enviar</button></td>
-                            <td><button name="submit" type="submit" class="btn btn-primary">Cancel</button></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>Pedido<input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
-                        </tr>
-                    </tbody>
-                </table>
-
+                <div class="container-fluid">
+                    <table style="border: 1px #464bd2 solid" align="center" width="65%">
+                        <tbody>
+                            <tr>
+                                <td style="border: 1px #464bd2 solid">Cell 1x1</td>
+                                <td style="border: 1px #464bd2 solid">Cell 2x1</td>
+                                <td style="border: 1px #464bd2 solid">Cell 3x1</td>
+                                <td style="border: 1px #464bd2 solid">Cell 4x1</td>
+                                <td style="border: 1px #464bd2 solid">Cell 5x1</td>
+                                <td style="border: 1px #464bd2 solid">Cell 6x1</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px #464bd2 solid">Cell 1x2</td>
+                                <td style="border: 1px #464bd2 solid">Cell 2x2</td>
+                                <td style="border: 1px #464bd2 solid">Cell 3x2</td>
+                                <td style="border: 1px #464bd2 solid">Cell 4x2</td>
+                                <td style="border: 1px #464bd2 solid">Cell 5x2</td>
+                                <td style="border: 1px #464bd2 solid">Cell 6x2</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px #464bd2 solid">Cell 1x3</td>
+                                <td style="border: 1px #464bd2 solid">Cell 2x3</td>
+                                <td style="border: 1px #464bd2 solid">Cell 3x3</td>
+                                <td style="border: 1px #464bd2 solid">Cell 4x3</td>
+                                <td style="border: 1px #464bd2 solid">Cell 5x3</td>
+                                <td style="border: 1px #464bd2 solid">Cell 6x3</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px #464bd2 solid">Cell 1x4</td>
+                                <td style="border: 1px #464bd2 solid">Cell 2x4</td>
+                                <td style="border: 1px #464bd2 solid">Cell 3x4</td>
+                                <td style="border: 1px #464bd2 solid">Cell 4x4</td>
+                                <td style="border: 1px #464bd2 solid">Cell 5x4</td>
+                                <td style="border: 1px #464bd2 solid">Cell 6x4</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px #464bd2 solid">Cell 1x5</td>
+                                <td style="border: 1px #464bd2 solid">Cell 2x5</td>
+                                <td style="border: 1px #464bd2 solid">Cell 3x5</td>
+                                <td style="border: 1px #464bd2 solid">Cell 4x5</td>
+                                <td style="border: 1px #464bd2 solid">Cell 5x5</td>
+                                <td style="border: 1px #464bd2 solid">Cell 6x5</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px #464bd2 solid">Cell 1x6</td>
+                                <td style="border: 1px #464bd2 solid">Cell 2x6</td>
+                                <td style="border: 1px #464bd2 solid">Cell 3x6</td>
+                                <td style="border: 1px #464bd2 solid">Cell 4x6</td>
+                                <td style="border: 1px #464bd2 solid">Cell 5x6</td>
+                                <td style="border: 1px #464bd2 solid">Cell 6x6</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <!-- Footer -->
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">
@@ -403,18 +232,16 @@ if (!empty($_SESSION['id'])) {
                         </div>
                     </div>
                 </footer>
-
                 <!-- Scroll to Top Button-->
                 <a class="scroll-to-top rounded" href="#page-top">
                     <i class="fas fa-angle-up"></i>
                 </a>
-
                 <!-- Logout Modal-->
                 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Desea Cerrar?</h5>
                                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">×</span>
                                 </button>
