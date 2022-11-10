@@ -343,7 +343,20 @@ if (!empty($_SESSION['id'])) {
                             <td></td>
                             <td></td>
                             <td></td>
-                            <th>Total</th>
+                        <th>Total</th>
+                            <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <th>Abona</th>
                             <td style="width:100px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
                             <th>Resta</th>
                             <td style="width:250px;"><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
@@ -371,8 +384,26 @@ if (!empty($_SESSION['id'])) {
                             </td>
                             <td>
                                 <div class="custom-control custom-radio custom-control-inline">
-                                    <input name="radio" id="radio_2" type="radio" class="custom-control-input" value="Credito">
-                                    <label for="radio_2" class="custom-control-label">Credito</label>
+                                    <input name="radio" id="radio_2" type="radio" class="custom-control-input" value="Transferencia">
+                                    <label for="radio_2" class="custom-control-label">Transferencia</label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input name="radio" id="radio_3" type="radio" class="custom-control-input" value="Credito">
+                                    <label for="radio_3" class="custom-control-label">Credito</label>
+                                    <div class="col-6">
+                                    <td>    
+                                    <select id="select" name="select" class="custom-select">
+                                        <option value="1">1 Pago</option>
+                                        <option value="2">2 Pagos</option>
+                                        <option value="3">3 Pagos</option>
+                                        <option value="6">6 Pagos</option>
+                                        <option value="9">9 Pagos</option>
+                                        <option value="12">12 Pagos</option>
+                                        <option value="13">Z</option>
+                                    </select>
+                                    </td>
                                 </div>
                             </td>
                         </tr>

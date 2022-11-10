@@ -197,7 +197,14 @@ if (!empty($_SESSION['id'])) {
                             <td><input id="text" disabled name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
                             <td>Precio Cristales</td>
                             <td><input id="text" disabled name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-
+                        </tr>
+                        <tr> 
+                            <td></td>
+                            <td></td>  
+                            <td></td> 
+                            <td></td>
+                            <td>Costo bruto Cristales</td>
+                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
                         </tr>
                         <tr>
                             <td>Apellido</td>

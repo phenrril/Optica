@@ -214,13 +214,35 @@ if (!empty($_SESSION['id'])) {
                                             <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
                                         </tr>
                                         <tr>
+                                            <td>Cantidad</td>
+                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                                        </tr>
+                                        <tr>
                                             <td>Precio bruto</td>
                                             <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Recargo</td>
+                                            <td><input id="text"  placeholder="ingrese recargo" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                                            <tr>
+                            <td>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input name="radio" id="radio_0" type="radio" class="custom-control-input" value="manual">
+                                    <label for="radio_0" class="custom-control-label">Manual</label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input name="radio" id="radio_1" type="radio" class="custom-control-input" value="porcentaje">
+                                    <label for="radio_1" class="custom-control-label">Porcentaje</label>
+                                </div>
+                            </td>
                                         </tr>
                                         <tr>
                                             <td>Precio de Venta</td>
                                             <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
                                             <th scope="row"><button name="submit" type="submit" class="btn btn-primary">Agregar Articulo</button></th>
+                                            <th scope="row"><button name="submit" type="submit" class="btn btn-primary">Ver lista</button></th>
                                         </tr>
                                     </tbody>
                                 </table>
