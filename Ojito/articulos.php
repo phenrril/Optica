@@ -166,8 +166,9 @@ if (!empty($_SESSION['id'])) {
 
                 </nav>
                 <!-- End of Topbar -->
-                
+       
                 <div class="container-fluid">
+                  
                     <table WIDTH="90%" align="center" >
                         <tr>
                             <td>
@@ -177,15 +178,18 @@ if (!empty($_SESSION['id'])) {
                                     </tr>
                                     <tr>
                                         <td>Identificador</td>
-                                        <td><input id="text"  name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" ></td>
+                                                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                                        <?php  require "../conexion.php";
+                                         include "../controlador/controlador_articulos.php"; ?>
+                                        <td><input   name="identificadorT" type="text"  ></td>
                                     </tr>
-                                            <th scope="row"><button name="submit" type="submit" class="btn btn-primary">Buscar Articulo</button></th>
+                                            <th scope="row"><input name="buscarA" type="submit" value="Buscar" class="btn btn-primary"></input></th>
                                             <th scope="row"><button name="submit" type="submit" class="btn btn-primary">Agregar Articulo</button></th>
                                         </tr>
                                     </tbody>
                                 </table>
                             </td>
-                            <td>
+                            <td></form>
                                 
                                 <table WIDTH="80%" class="table table-borderless" id="crearcliente">
                                     <tr>
@@ -194,36 +198,36 @@ if (!empty($_SESSION['id'])) {
                                     </tr>
                                     <tr>
                                         <td>id Articulo</td>
-                                        <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                                        <td><input id="text" name="idArticulo" type="text" class="form-control" spellcheck="false" data-ms-editor="true" ></td>
                                     </tr>
                                     <tbody>
                                         <tr>
                                             <td>Marca</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                                            <td><input id="text" name="marca" type="text" class="form-control" spellcheck="false" data-ms-editor="true" ></td>
                                         </tr>
                                         <tr>
                                             <td>Identificador</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                                            <td><input id="text" name="identificador" type="text" class="form-control" spellcheck="false" data-ms-editor="true" </td>
                                         </tr>
                                         <tr>
                                             <td>Genero</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                                            <td><input id="text" name="genero" type="text" class="form-control" spellcheck="false" data-ms-editor="true" ></td>
                                         </tr>
                                         <tr>
-                                            <td>Modelo</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                                            <td>modelo precio prueba</td>
+                                            <td><input id="text" name="precio" type="text" class="form-control" spellcheck="false" data-ms-editor="true" ></td>
                                         </tr>
                                         <tr>
                                             <td>Cantidad</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" ></td>
                                         </tr>
                                         <tr>
                                             <td>Precio bruto</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" ></td>
                                         </tr>
                                         <tr>
                                             <td>Recargo</td>
-                                            <td><input id="text"  placeholder="ingrese recargo" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                                            <td><input id="text"  placeholder="ingrese recargo" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" ></td>
                                             <tr>
                             <td>
                                 <div class="custom-control custom-radio custom-control-inline">
@@ -240,7 +244,7 @@ if (!empty($_SESSION['id'])) {
                                         </tr>
                                         <tr>
                                             <td>Precio de Venta</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
                                             <th scope="row"><button name="submit" type="submit" class="btn btn-primary">Agregar Articulo</button></th>
                                             <th scope="row"><button name="submit" type="submit" class="btn btn-primary">Ver lista</button></th>
                                         </tr>
