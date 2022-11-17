@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <?php
+
+use Google\Service\CloudSearch\Id;
+use Google\Service\CloudSearch\Value;
+
 session_start();
 if (!empty($_SESSION['id'])) {
     //echo "positivo";
@@ -155,27 +159,31 @@ if (!empty($_SESSION['id'])) {
                             <table WIDTH="80%" class="table table-borderless" id="buscarcliente">
                                     <tr>
                                         <th>Busqueda de Clientes</th>
+                                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                                        <?php  require "../conexion.php";
+                                            include "../controlador/controlador_clientes.php"; ?>
                                     </tr>
                                     <tr>
                                         <td>DNI</td>
-                                        <td><input id="text" placeholder="coloque DNI" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" ></td>
+                                        <td><input id="text" placeholder="coloque DNI" name="dniC" type="text" class="form-control" spellcheck="false" data-ms-editor="true" ></td>
                                     </tr>
-                                            <th scope="row"><button name="submit" type="submit" class="btn btn-primary">Buscar Cliente</button></th>
+                                            <th scope="row"><input value="Buscar Cliente" name="buscarC" type="submit" class="btn btn-primary"></input></th>
                                             <th scope="row"><button name="submit" type="submit" class="btn btn-primary">Agregar Cliente</button></th>
+                                            </form>
                                         </tr>
                                     </tbody>
                                 </table>
                             </td>
                             <td>
                                 
-                                <table WIDTH="80%" class="table table-borderless" id="crearcliente">
+                                <!-- <table WIDTH="80%" class="table table-borderless" id="crearcliente">
                                     <tr>
                                         <td>
                                         <th>Nuevo Cliente</th>
                                     </tr>
                                     <tr>
                                         <td>id cliente</td>
-                                        <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                                        <td><input id="text" value="" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
                                     </tr>
                                     <tbody>
                                         <tr>
@@ -205,10 +213,10 @@ if (!empty($_SESSION['id'])) {
                                         <tr>
                                             <td>Medico</td>
                                             <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
-                                            <th scope="row"><button name="submit" type="submit" class="btn btn-primary">Agregar Cliente</button></th>
+                                            <th scope="row"><button name="submit" type="submit" class="btn btn-primary">Ir a Cobros</button></th>
                                         </tr>
                                     </tbody>
-                                </table>
+                                </table> -->
                             </td>
                         </tr>
                     </table>
