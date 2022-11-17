@@ -19,8 +19,8 @@ if (!empty($_POST['buscarC'])) {
 
             echo "<table WIDTH='80%' class='table table-borderless' id='crearcliente'>
             <tr>
-                <td>
-                <th>Nuevo Cliente </th>
+                <td></td>
+                <th></th>
             </tr>
             <tr>
                 <td>id cliente</td>

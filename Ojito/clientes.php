@@ -15,7 +15,7 @@ if (!empty($_SESSION['id'])) {
 <html lang="es">
 
 <head>
-
+    <script src="/script.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -128,19 +128,6 @@ if (!empty($_SESSION['id'])) {
                             </a>
                             <!-- user info -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in">
-                                <!-- aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a> -->
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="controlador/cerrar_sesion.php" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -153,73 +140,33 @@ if (!empty($_SESSION['id'])) {
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <table WIDTH="90%" align="center" >
+                    <table WIDTH="50%" align="center" id="buscarcliente">
                         <tr>
                             <td>
-                            <table WIDTH="80%" class="table table-borderless" id="buscarcliente">
+                                <table WIDTH="60%" class="table table-borderless">
                                     <tr>
                                         <th>Busqueda de Clientes</th>
                                         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                                        <?php  require "../conexion.php";
-                                            include "../controlador/controlador_clientes.php"; ?>
+                                            <?php require "../conexion.php";
+                                            include "../controlador/controlador_clientes.php";
+                                            include "../controlador/controlador_agregar_clientes.php"; ?>
                                     </tr>
                                     <tr>
                                         <td>DNI</td>
-                                        <td><input id="text" placeholder="coloque DNI" name="dniC" type="text" class="form-control" spellcheck="false" data-ms-editor="true" ></td>
+                                        <td><input id="text" placeholder="coloque DNI" name="dniC" type="text" class="form-control" spellcheck="false" data-ms-editor="true" autofocus></td>
                                     </tr>
-                                            <th scope="row"><input value="Buscar Cliente" name="buscarC" type="submit" class="btn btn-primary"></input></th>
-                                            <th scope="row"><button name="submit" type="submit" class="btn btn-primary">Agregar Cliente</button></th>
-                                            </form>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                            <td>
-                                
-                                <!-- <table WIDTH="80%" class="table table-borderless" id="crearcliente">
-                                    <tr>
-                                        <td>
-                                        <th>Nuevo Cliente</th>
-                                    </tr>
-                                    <tr>
-                                        <td>id cliente</td>
-                                        <td><input id="text" value="" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
-                                    </tr>
-                                    <tbody>
-                                        <tr>
-                                            <td>Nombre</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Apellido</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
-                                        </tr>
-                                        <tr>
-                                            <td>DNI</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Domicilio</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Telefono</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Obra Social</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Medico</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
-                                            <th scope="row"><button name="submit" type="submit" class="btn btn-primary">Ir a Cobros</button></th>
-                                        </tr>
-                                    </tbody>
-                                </table> -->
-                            </td>
+                                    <th scope="row"><input value="Buscar Cliente" name="buscarC" type="submit" class="btn btn-primary"></th>
+                                    <th scope="row"><input value="Agregar Cliente" name="agregarC" type="submit" class="btn btn-primary"></input></th>
+                                    <th scope="row"><input value="Cancelar" name="cancelar" type="submit" class="btn btn-primary"></input></th>
+                                    </form>
                         </tr>
+                        </tbody>
                     </table>
+                    </td>
+                    </td>
+                    </tr>
+                    <tr>
+                        </table>
                 </div>
             </div>
         </div>
@@ -230,7 +177,7 @@ if (!empty($_SESSION['id'])) {
     <footer class="sticky-footer bg-white">
         <div class="container my-auto">
             <div class="copyright text-center my-auto">
-                <span>Copyright &copy; S&M Informatica </span>
+                <span>Copyright &copy; S&M Informatica 2022</span>
             </div>
         </div>
     </footer>
@@ -269,15 +216,11 @@ if (!empty($_SESSION['id'])) {
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
     <!-- Page level plugins -->
     <script src="vendor/chart.js/Chart.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+
+
 
 </body>
 
