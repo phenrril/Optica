@@ -4,7 +4,7 @@
 if (!empty($_POST['buscarC'])) {
 	if (!empty($_POST['dniC']) and is_numeric($_POST['dniC']))   {
 		$dni=$_POST['dniC'];
-		$sql=$conexion->query(" SELECT * FROM pacientes WHERE dni_P='$dni'");
+		$sql=$conexion->query(" SELECT * FROM pacientes WHERE dni_P='$dni' ");
 		if ($datos=$sql->fetch_object()) {
 			$_SESSION['idcliente']=$datos->id;
             $_SESSION['dni_P']=$datos->dni_P;
@@ -78,51 +78,78 @@ else {
 if (!empty($_POST['agregarC'])) {
     if (!empty($_POST['dniC']) and is_numeric($_POST['dniC']))   {
 
-        echo "<div class='alert alert-danger'>HASTA ACA LLEGA </div>";
+       // echo "<div class='alert alert-danger'>HASTA ACA LLEGA </div>";
+
+        echo "DNI <input name='dniCliente' style='width: 200px' value='' type='text' class='form-control'  >";
+        echo "Nombre <input name='nombreC' style='width: 200px' value='' type='text' class='form-control'  >";
+        echo "Apellido <input name='apellidoC' style='width: 200px' value='' type='text' class='form-control'  >";
+        echo "Domicilio <input name='domicilioC' style='width: 200px' value='' type='text' class='form-control'  >";
+        echo "Telefono <input name='telefonoC' style='width: 200px' value='' type='text' class='form-control'  >";
+        echo "Obra Social <input name='obraC' style='width: 200px' value='' type='text' class='form-control'  >";
+        echo "Fecha <input name='fechaC' style='width: 200px' value='' type='text' class='form-control' disabled  >";
+        echo "Medico <input name='medicoC' style='width: 200px' value='' type='text' class='form-control'  >";
+//        echo "<form action=" . $_SERVER['PHP_SELF'] . " method='post'>"; 
+//        require "../conexion.php";
+//        echo "<input value='Guardar y cobrar' name='validarC' type='submit' class='btn btn-primary'></input>";
+//        echo "</form>";
+} 
+    else {
+        echo "<div class='alert alert-danger'>Datos Erroneos </div>";
     }
-        echo "<table WIDTH='100%'  id=agregar_cliente class='table table-borderless'>
-            <tr>
-                <td>
-                <th>Nuevo Cliente </th>
-            </tr>
-            <tr>
-                <td>id cliente</td>
-                <td><input id='text' value='' name='id' type='text' class='form-control' disabled ></td>
-            </tr>
-            <tbody>
-                <tr>
-                    <td>Nombre</td>
-                    <td><input name='nombreC' value='' type='text' class='form-control'  ></td>
-                </tr>
-                <tr>
-                    <td>Apellido</td>
-                    <td><input name='apellidoC' value='' type='text' class='form-control'></td>
-                </tr>
-                <tr>
-                    <td>DNI</td>
-                    <td><input name='dniC' value='' type='text' class='form-control'  ></td>
-                </tr>
-                <tr>
-                    <td>Domicilio</td>
-                    <td><input  name='domicilioC' value='' type='text' class='form-control'  ></td>
-                </tr>
-                <tr>
-                    <td>Telefono</td>
-                    <td><input  name='telefonoC' value='' type='text' class='form-control'  ></td>
-                </tr>
-                <tr>
-                    <td>Obra Social</td>
-                    <td><input  name='obraC' value='' type='text' class='form-control'  ></td>
-                </tr>
-                <tr>
-                    <td>Medico</td>
-                    <td><input name='medicoC' value='' type='text' class='form-control'  ></td>        
-                    <th scope='row'></th>                           
-                    </form>
-                </tr>
-            </tbody>
-        </table>";
-    }
+
+
+
+}
+elseif (!empty($_POST['validarC'])and empty($_POST['dniC'])) {
+    echo "<div class='alert alert-danger'>Faltan cargar datos </div>";
+}
+
+
+
+
+    //     echo "<table WIDTH='100%'  id=agregar_cliente class='table table-borderless'>
+    //         <tr>
+    //             <td>
+    //             <th>Nuevo Cliente </th>
+    //         </tr>
+    //         <tr>
+    //             <td>id cliente</td>
+    //             <td><input id='text' value='' name='id' type='text' class='form-control' disabled ></td>
+    //         </tr>
+    //         <tbody>
+    //             <tr>
+    //                 <td>Nombre</td>
+    //                 <td><input name='nombreC' value='' type='text' class='form-control'  ></td>
+    //             </tr>
+    //             <tr>
+    //                 <td>Apellido</td>
+    //                 <td><input name='apellidoC' value='' type='text' class='form-control'></td>
+    //             </tr>
+    //             <tr>
+    //                 <td>DNI</td>
+    //                 <td><input name='dniC' value='' type='text' class='form-control'  ></td>
+    //             </tr>
+    //             <tr>
+    //                 <td>Domicilio</td>
+    //                 <td><input  name='domicilioC' value='' type='text' class='form-control'  ></td>
+    //             </tr>
+    //             <tr>
+    //                 <td>Telefono</td>
+    //                 <td><input  name='telefonoC' value='' type='text' class='form-control'  ></td>
+    //             </tr>
+    //             <tr>
+    //                 <td>Obra Social</td>
+    //                 <td><input  name='obraC' value='' type='text' class='form-control'  ></td>
+    //             </tr>
+    //             <tr>
+    //                 <td>Medico</td>
+    //                 <td><input name='medicoC' value='' type='text' class='form-control'  ></td>        
+    //                 <th scope='row'></th>                           
+    //                 </form>
+    //             </tr>
+    //         </tbody>
+    //     </table>";
+    // }
     // elseif(!is_numeric($_POST['dniC'])) {
     //     echo "<div class='alert alert-danger'>Formato incorrecto </div>";
     //     if(empty($_POST['dniC'])){
@@ -133,7 +160,19 @@ if (!empty($_POST['agregarC'])) {
 
 // controlador validar clientes
 
-if (!empty($_POST['validarC'])) {
+if (!empty($_POST['validarC']) and !empty($_POST['dniC']) and is_numeric($_POST['dniC'])) {
+
+    $dni = $_POST['dniCliente'];
+    $nombre = $_POST['nombreC'];
+    $apellido = $_POST['apellidoC'];
+    $domicilio = $_POST['domicilioC'];
+    $telefono = $_POST['telefonoC'];
+    $obra = $_POST['obraC'];
+    $fecha = $_POST['fechaC'];
+    $medico = $_POST['medicoC'];
+    
+    //echo "<script>alert(". $_POST['dniCliente'] . ")</script>";
+    
     $sql=$conexion->query(" INSERT INTO pacientes (dni_P, nombre_P, apellido_P, domicilio_P, telefono_P, obra_S, fecha_P, medico_P) VALUES ('$dni', '$nombre', '$apellido', '$domicilio', '$telefono', '$obra', '$fecha', '$medico')");
  if ($sql) {
     echo "<script>alert('Cliente agregado correctamente')</script>";
@@ -143,7 +182,6 @@ if (!empty($_POST['validarC'])) {
     echo "<script>window.location='clientes.php'</script>";
 }
 }
-
 
 
 
@@ -171,3 +209,7 @@ if (!empty($_POST['validarC'])) {
 //     } else {
 //         echo "<div class='alert alert-danger'>Datos Erroneos </div>";
 //     }
+
+
+
+?>
