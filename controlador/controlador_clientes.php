@@ -44,41 +44,56 @@ else {
 
 if (!empty($_POST['agregarC'])) {
     if (!empty($_POST['dniC']) and is_numeric($_POST['dniC']))   {
-
-       // echo "<div class='alert alert-danger'>HASTA ACA LLEGA </div>";
-
-        echo "DNI <input name='dniCliente' style='width: 200px' value='' type='text' class='form-control'  >";
-        echo "Nombre <input name='nombreC' style='width: 200px' value='' type='text' class='form-control'  >";
-        echo "Apellido <input name='apellidoC' style='width: 200px' value='' type='text' class='form-control'  >";
-        echo "Domicilio <input name='domicilioC' style='width: 200px' value='' type='text' class='form-control'  >";
-        echo "Telefono <input name='telefonoC' style='width: 200px' value='' type='text' class='form-control'  >";
-        echo "Obra Social <input name='obraC' style='width: 200px' value='' type='text' class='form-control'  >";
-        echo "Fecha <input name='fechaC' style='width: 200px' value='' type='text' class='form-control' disabled  >";
-        echo "Medico <input name='medicoC' style='width: 200px' value='' type='text' class='form-control'  >";
-} 
+        $dni=$_POST['dniC'];
+        $sql=$conexion->query(" SELECT dni_P FROM pacientes WHERE dni_P='$dni' ");
+        //validar $sql
+        if ($datos=$sql->fetch_object()) {
+            echo "<div class='alert alert-danger'>Cliente ya existe </div>";
+        } 
+        else {
+            echo "DNI <input name='dniCliente' style='width: 200px' value='' type='text' class='form-control'  >";
+            echo "Nombre <input name='nombreC' style='width: 200px' value='' type='text' class='form-control'  >";
+            echo "Apellido <input name='apellidoC' style='width: 200px' value='' type='text' class='form-control'  >";
+            echo "Domicilio <input name='domicilioC' style='width: 200px' value='' type='text' class='form-control'  >";
+            echo "Telefono <input name='telefonoC' style='width: 200px' value='' type='text' class='form-control'  >";
+            echo "Obra Social <input name='obraC' style='width: 200px' value='' type='text' class='form-control'  >";
+            echo "Medico <input name='medicoC' style='width: 200px' value='' type='text' class='form-control'  >";
+            echo "<input name='fechaC' style='visibility:hidden' style='width: 200px' value='' type='text' class='form-control' disabled  >";
+        }
+    }
     else {
         echo "<div class='alert alert-danger'>Datos Erroneos </div>";
-    }
-    
+    } 
+}
 
 
-}
-elseif (!empty($_POST['validarC'])and empty($_POST['dniCliente'])) {
-    echo "<div class='alert alert-danger'>Faltan cargar datos  </div>";
-}
+// elseif (!empty($_POST['validarC'])and empty($_POST['dniCliente'])) {
+//     echo "<div class='alert alert-danger'>Faltan cargar datos  </div>";
+// }
 
 
 // controlador validar clientes
 
 if (!empty($_POST['validarC']) and !empty($_POST['dniCliente']) and is_numeric($_POST['dniCliente'])) {
 
+    if(is_numeric ($_POST['dniCliente'])){
     $dni = $_POST['dniCliente'];
+    }
+    else {
+        echo "<div class='alert alert-danger'>DNI debe ser numerico </div>";
+    }
     $nombre = $_POST['nombreC'];
     $apellido = $_POST['apellidoC'];
     $domicilio = $_POST['domicilioC'];
+    if(is_numeric ($_POST['telefonoC'])){
     $telefono = $_POST['telefonoC'];
+    }
+    else {
+        echo "<div class='alert alert-danger'>Telefono debe ser numerico </div>";
+    }
     $obra = $_POST['obraC'];
-    $fecha = $_POST['fechaC'];
+    $fcha = date("Y-m-d");
+    $fecha = $fcha;
     $medico = $_POST['medicoC'];
     
     //echo "<script>alert(". $_POST['dniCliente'] . ")</script>";
