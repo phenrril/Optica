@@ -16,50 +16,17 @@ if (!empty($_POST['buscarC'])) {
             $_SESSION['fecha_P']=$datos->fecha_P;
             $_SESSION['medico_P']=$datos->medico_P;
 
-            echo "<table WIDTH='100%' class='table table-borderless'>
-            <tr>
-                <td></td>
-                <th>Busqueda de Cliente</th>
-                <th></th>
-            </tr> 
-            <tr>
-                <td>id cliente</td>
-                <td><input id='text' value= " .  $_SESSION['idcliente'] .  "  name='text' type='text' class='form-control' spellcheck='false' data-ms-editor='true' disabled></td>
-            </tr>
-            <tbody>
-                <tr>
-                    <td>Nombre</td>
-                    <td><input id='text' value= " .  $_SESSION['nombre_P'] .  " name='text' type='text' class='form-control' spellcheck='false' data-ms-editor='true' disabled></td>
-                </tr>
-                <tr>
-                    <td>Apellido</td>
-                    <td><input id='text' value= " .  $_SESSION['apellido_P'] .  " name='text' type='text' class='form-control' spellcheck='false' data-ms-editor='true' disabled></td>
-                </tr>
-                <tr>
-                    <td>DNI</td>
-                    <td><input id='text' name='text' value= " .  $_SESSION['dni_P'] .  " type='text' class='form-control' spellcheck='false' data-ms-editor='true' disabled></td>
-                </tr>
-                <tr>
-                    <td>Domicilio</td>
-                    <td><input id='text' name='text' value= " .  $_SESSION['domicilio_P'] .  " type='text' class='form-control' spellcheck='false' data-ms-editor='true' disabled></td>
-                </tr>
-                <tr>
-                    <td>Telefono</td>
-                    <td><input id='text' name='text' value= " .  $_SESSION['telefono_P'] .  " type='text' class='form-control' spellcheck='false' data-ms-editor='true' disabled></td>
-                </tr>
-                <tr>
-                    <td>Obra Social</td>
-                    <td><input id='text' name='text' value= " .  $_SESSION['obra_S'] .  " type='text' class='form-control' spellcheck='false' data-ms-editor='true' disabled></td>
-                </tr>
-                <tr>
-                    <td>Medico</td>
-                    <td><input id='text' name='text' value= " .  $_SESSION['medico_P'] .  " type='text' class='form-control' spellcheck='false' data-ms-editor='true' disabled></td>
-                    <th scope='row'><button name='submit' type='submit' class='btn btn-primary'>Ir a Cobros</button></th>
-                </tr>
-            </tbody>
-        </table>";
+            echo "ID Cliente <input name='idcliente' style='width: 200px' value=" .  $_SESSION['idcliente'] .  " type='text' class='form-control'  disabled>";
+            echo "DNI <input name='dniCliente' style='width: 200px' value=" .  $_SESSION['dni_P'] .  " type='text' class='form-control' disabled >";
+            echo "Nombre <input name='nombreC' style='width: 200px' value=" .  $_SESSION['nombre_P'] .  " type='text' class='form-control' disabled >";
+            echo "Apellido <input name='apellidoC' style='width: 200px' value=" .  $_SESSION['apellido_P'] .  " type='text' class='form-control' disabled >";
+            echo "Domicilio <input name='domicilioC' style='width: 200px' value=" .  $_SESSION['domicilio_P'] .  " type='text' class='form-control'  disabled>";
+            echo "Telefono <input name='telefonoC' style='width: 200px' value=" .  $_SESSION['telefono_P'] .  " type='text' class='form-control' disabled >";
+            echo "Obra Social <input name='obraC' style='width: 200px' value=" .  $_SESSION['obra_S'] .  " type='text' class='form-control' disabled >";
+            echo "Fecha <input name='fechaC' style='width: 200px' value=" .  $_SESSION['fecha_P'] .  " type='text' class='form-control' disabled  >";
+            echo "Medico <input name='medicoC' style='width: 200px' value=" .  $_SESSION['medico_P'] .  " type='text' class='form-control'  disabled>";
 
-
+        
 		} 
         else {
 			echo "<div class='alert alert-danger'>Cliente no existe </div>";
@@ -72,8 +39,8 @@ else {
 
 }
 
-
 // controlador agregar cliente
+
 
 if (!empty($_POST['agregarC'])) {
     if (!empty($_POST['dniC']) and is_numeric($_POST['dniC']))   {
@@ -88,79 +55,22 @@ if (!empty($_POST['agregarC'])) {
         echo "Obra Social <input name='obraC' style='width: 200px' value='' type='text' class='form-control'  >";
         echo "Fecha <input name='fechaC' style='width: 200px' value='' type='text' class='form-control' disabled  >";
         echo "Medico <input name='medicoC' style='width: 200px' value='' type='text' class='form-control'  >";
-//        echo "<form action=" . $_SERVER['PHP_SELF'] . " method='post'>"; 
-//        require "../conexion.php";
-//        echo "<input value='Guardar y cobrar' name='validarC' type='submit' class='btn btn-primary'></input>";
-//        echo "</form>";
 } 
     else {
         echo "<div class='alert alert-danger'>Datos Erroneos </div>";
     }
-
+    
 
 
 }
-elseif (!empty($_POST['validarC'])and empty($_POST['dniC'])) {
-    echo "<div class='alert alert-danger'>Faltan cargar datos </div>";
+elseif (!empty($_POST['validarC'])and empty($_POST['dniCliente'])) {
+    echo "<div class='alert alert-danger'>Faltan cargar datos  </div>";
 }
-
-
-
-
-    //     echo "<table WIDTH='100%'  id=agregar_cliente class='table table-borderless'>
-    //         <tr>
-    //             <td>
-    //             <th>Nuevo Cliente </th>
-    //         </tr>
-    //         <tr>
-    //             <td>id cliente</td>
-    //             <td><input id='text' value='' name='id' type='text' class='form-control' disabled ></td>
-    //         </tr>
-    //         <tbody>
-    //             <tr>
-    //                 <td>Nombre</td>
-    //                 <td><input name='nombreC' value='' type='text' class='form-control'  ></td>
-    //             </tr>
-    //             <tr>
-    //                 <td>Apellido</td>
-    //                 <td><input name='apellidoC' value='' type='text' class='form-control'></td>
-    //             </tr>
-    //             <tr>
-    //                 <td>DNI</td>
-    //                 <td><input name='dniC' value='' type='text' class='form-control'  ></td>
-    //             </tr>
-    //             <tr>
-    //                 <td>Domicilio</td>
-    //                 <td><input  name='domicilioC' value='' type='text' class='form-control'  ></td>
-    //             </tr>
-    //             <tr>
-    //                 <td>Telefono</td>
-    //                 <td><input  name='telefonoC' value='' type='text' class='form-control'  ></td>
-    //             </tr>
-    //             <tr>
-    //                 <td>Obra Social</td>
-    //                 <td><input  name='obraC' value='' type='text' class='form-control'  ></td>
-    //             </tr>
-    //             <tr>
-    //                 <td>Medico</td>
-    //                 <td><input name='medicoC' value='' type='text' class='form-control'  ></td>        
-    //                 <th scope='row'></th>                           
-    //                 </form>
-    //             </tr>
-    //         </tbody>
-    //     </table>";
-    // }
-    // elseif(!is_numeric($_POST['dniC'])) {
-    //     echo "<div class='alert alert-danger'>Formato incorrecto </div>";
-    //     if(empty($_POST['dniC'])){
-    //         echo "<div class='alert alert-danger'>Ingrese DNI </div>";
-    //     }
-
 
 
 // controlador validar clientes
 
-if (!empty($_POST['validarC']) and !empty($_POST['dniC']) and is_numeric($_POST['dniC'])) {
+if (!empty($_POST['validarC']) and !empty($_POST['dniCliente']) and is_numeric($_POST['dniCliente'])) {
 
     $dni = $_POST['dniCliente'];
     $nombre = $_POST['nombreC'];
@@ -180,6 +90,7 @@ if (!empty($_POST['validarC']) and !empty($_POST['dniC']) and is_numeric($_POST[
 } else {
     echo "<script>alert('Error al agregar cliente')</script>";
     echo "<script>window.location='clientes.php'</script>";
+    unset($dni, $nombre, $apellido, $domicilio, $telefono, $obra, $fecha, $medico);
 }
 }
 
@@ -209,6 +120,14 @@ if (!empty($_POST['validarC']) and !empty($_POST['dniC']) and is_numeric($_POST[
 //     } else {
 //         echo "<div class='alert alert-danger'>Datos Erroneos </div>";
 //     }
+
+
+// Boton Cancelar
+
+if(!empty($_POST['cancelarC'])){
+    echo "<a href='clientes.php'></a>";
+    }
+
 
 
 
