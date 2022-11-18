@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <?php
 
-use Google\Service\CloudSearch\Id;
-use Google\Service\CloudSearch\Value;
+//use Google\Service\CloudSearch\Id;
+//use Google\Service\CloudSearch\Value;
 
 session_start();
 if (!empty($_SESSION['id'])) {
@@ -15,7 +15,7 @@ if (!empty($_SESSION['id'])) {
 <html lang="es">
 
 <head>
-    <script src="/script.js"></script>
+    <!-- <script src="/script.js"></script> -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -143,21 +143,23 @@ if (!empty($_SESSION['id'])) {
                     <table WIDTH="50%" align="center" id="buscarcliente">
                         <tr>
                             <td>
-                                <table WIDTH="60%" class="table table-borderless">
+                                <table WIDTH="50%" class="table table-borderless">
                                     <tr>
-                                        <th>Busqueda de Clientes</th>
+                                        <th></th>
                                         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                                             <?php require "../conexion.php";
-                                            include "../controlador/controlador_clientes.php";
-                                            include "../controlador/controlador_agregar_clientes.php"; ?>
+                                            include "../controlador/controlador_clientes.php"; //buscar clientes
+                                           // include "../controlador/controlador_agregar_clientes.php"; // agregar clientes
+                                           // include "../controlador/controlador_validar_clientes.php"; // validar clientes ?> 
                                     </tr>
                                     <tr>
                                         <td>DNI</td>
                                         <td><input id="text" placeholder="coloque DNI" name="dniC" type="text" class="form-control" spellcheck="false" data-ms-editor="true" autofocus></td>
                                     </tr>
-                                    <th scope="row"><input value="Buscar Cliente" name="buscarC" type="submit" class="btn btn-primary"></th>
-                                    <th scope="row"><input value="Agregar Cliente" name="agregarC" type="submit" class="btn btn-primary"></input></th>
-                                    <th scope="row"><input value="Cancelar" name="cancelar" type="submit" class="btn btn-primary"></input></th>
+                                    <th scope="row" width="25%"><input value="Buscar Cliente" name="buscarC" type="submit" class="btn btn-primary"></input></th>
+                                    <th scope="row" width="25%"><input value="Agregar Cliente" name="agregarC" type="submit" class="btn btn-primary"></input></th>
+                                    <th scope="row" width="25%"><input value="Guardar y cobrar" name="validarC" type="submit" class="btn btn-primary"></input></th>
+                                    <th scope="row" width="25%"><input value="Cancelar" name="cancelarC" type="submit" class="btn btn-primary"></input></th>
                                     </form>
                         </tr>
                         </tbody>
@@ -218,9 +220,6 @@ if (!empty($_SESSION['id'])) {
 
     <!-- Page level plugins -->
     <script src="vendor/chart.js/Chart.min.js"></script>
-
-
-
 
 </body>
 

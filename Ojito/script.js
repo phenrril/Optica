@@ -18,9 +18,3 @@ $('.login').on('submit', function(e) {
   }, 3000);
 });
 
-
-function hideTable(){ 
-document.getElementById("buscarcliente").style.display = "none";} 
-
-function showTable(){
-document.getElementById("buscarcliente").style.display = "block";}
