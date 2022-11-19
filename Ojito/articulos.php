@@ -180,15 +180,18 @@ if (!empty($_SESSION['id'])) {
                                     <tr>
                                         <form  method="post"id="prueba">
                                         <?php  require "../conexion.php";?>
+                                        <?php  include "../controlador/controlador_articulos.php";?>
+
                                         <div id="resultado2">
     
 
                                             </div>
                                         <td>Identificador</td>
                                                  
-                                        <td><input   name="identificadorT" type="text"  ></td>
+                                        <td><input   name="identificadorT"id="identi" type="text"  ></td>
                                     </tr>
-                                            <th scope="row"><input name="buscarA" type="submit" value="Buscar" class="btn btn-primary"></input></th>
+                                            <th scope="row"><input name="buscarA" type="submit" value="Buscar" id="buscar"class="btn btn-primary"></input></th>
+                                            <th scope='row'><input  name='agregar_a' type='submit' class='btn btn-primary'value='calcelar'></input></th>
                                             <th scope="row"><input id="agregarpr" name="agregar_a" type="submit" class="btn btn-primary"value="Agregar Articulo"></input></th>
 
                                             <th scope="row"><button name="listarA"id="enviar" type="button" class="btn btn-primary">Lista de articulos</button></th>
@@ -205,7 +208,6 @@ if (!empty($_SESSION['id'])) {
                 </div>
 
 
-
 <script >
     
 $("#enviar").click(function(){
@@ -213,7 +215,7 @@ $("#enviar").click(function(){
         $.ajax({
                 url: "resultado.php",
                 type: "post",
-                data: $("#prueba").serialize(),
+                data: $("#formulario").serialize(),
                 success: function(resultado){
                         $("#resultado2").html(resultado);
 
@@ -231,10 +233,8 @@ $("#enviar").click(function(){
 
 
 
+
 </script>
-
-
-
 
                 <!-- Footer -->
                 <footer class="sticky-footer bg-white">
