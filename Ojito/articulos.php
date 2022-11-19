@@ -17,6 +17,7 @@ if (!empty($_SESSION['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
     <title>titulo pestaña</title>
 
@@ -177,79 +178,27 @@ if (!empty($_SESSION['id'])) {
                                         <th>Busqueda de Articulos</th>
                                     </tr>
                                     <tr>
+                                        <form  method="post"id="prueba">
+                                        <?php  require "../conexion.php";?>
+                                        <div id="resultado2">
+    
+
+                                            </div>
                                         <td>Identificador</td>
-                                                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                                        <?php  require "../conexion.php";
-                                         include "../controlador/controlador_articulos.php"; ?>
+                                                 
                                         <td><input   name="identificadorT" type="text"  ></td>
                                     </tr>
                                             <th scope="row"><input name="buscarA" type="submit" value="Buscar" class="btn btn-primary"></input></th>
-                                            <th scope="row"><button name="submit" type="submit" class="btn btn-primary">Agregar Articulo</button></th>
+                                            <th scope="row"><input id="agregarpr" name="agregar_a" type="submit" class="btn btn-primary"value="Agregar Articulo"></input></th>
+
+                                            <th scope="row"><button name="listarA"id="enviar" type="button" class="btn btn-primary">Lista de articulos</button></th>
                                         </tr>
                                     </tbody>
                                 </table>
                             </td>
                             <td></form>
                                 
-                                <table WIDTH="80%" class="table table-borderless" id="crearcliente">
-                                    <tr>
-                                        <td>
-                                        <th>Nuevo Articulo</th>
-                                    </tr>
-                                    <tr>
-                                        <td>id Articulo</td>
-                                        <td><input id="text" name="idArticulo" type="text" class="form-control" spellcheck="false" data-ms-editor="true" ></td>
-                                    </tr>
-                                    <tbody>
-                                        <tr>
-                                            <td>Marca</td>
-                                            <td><input id="text" name="marca" type="text" class="form-control" spellcheck="false" data-ms-editor="true" ></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Identificador</td>
-                                            <td><input id="text" name="identificador" type="text" class="form-control" spellcheck="false" data-ms-editor="true" </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Genero</td>
-                                            <td><input id="text" name="genero" type="text" class="form-control" spellcheck="false" data-ms-editor="true" ></td>
-                                        </tr>
-                                        <tr>
-                                            <td>modelo precio prueba</td>
-                                            <td><input id="text" name="precio" type="text" class="form-control" spellcheck="false" data-ms-editor="true" ></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cantidad</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" ></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Precio bruto</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" ></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Recargo</td>
-                                            <td><input id="text"  placeholder="ingrese recargo" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" ></td>
-                                            <tr>
-                            <td>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input name="radio" id="radio_0" type="radio" class="custom-control-input" value="manual">
-                                    <label for="radio_0" class="custom-control-label">Manual</label>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input name="radio" id="radio_1" type="radio" class="custom-control-input" value="porcentaje">
-                                    <label for="radio_1" class="custom-control-label">Porcentaje</label>
-                                </div>
-                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Precio de Venta</td>
-                                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
-                                            <th scope="row"><button name="submit" type="submit" class="btn btn-primary">Agregar Articulo</button></th>
-                                            <th scope="row"><button name="submit" type="submit" class="btn btn-primary">Ver lista</button></th>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                               
                             </td>
                         </tr>
                     </table>
@@ -257,6 +206,32 @@ if (!empty($_SESSION['id'])) {
 
 
 
+<script >
+    
+$("#enviar").click(function(){
+
+        $.ajax({
+                url: "resultado.php",
+                type: "post",
+                data: $("#prueba").serialize(),
+                success: function(resultado){
+                        $("#resultado2").html(resultado);
+
+                }
+
+
+        });
+
+
+
+
+
+
+});
+
+
+
+</script>
 
 
 
