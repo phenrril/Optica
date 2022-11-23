@@ -84,9 +84,6 @@ if (!empty($_POST['buscarA'])) {
 	}
 	
 }
+?>
 
 
-
-
-
- ?>

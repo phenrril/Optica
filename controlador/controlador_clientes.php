@@ -5,6 +5,12 @@ if (!empty($_POST['buscarC'])) {
 		$dni=$_POST['dniC'];
 		$sql=$conexion->query(" SELECT * FROM pacientes WHERE dni_P='$dni' ");
 		if ($datos=$sql->fetch_object()) {
+
+            echo '<script type="text/javascript">,        
+            document.getElementById("agregarCliente").setAttribute("type", "hidden"),
+            document.getElementById("guardar").setAttribute("type", "hidden"),
+            </script>';
+            
 			$_SESSION['idcliente']=$datos->id;
             $_SESSION['dni_P']=$datos->dni_P;
             $_SESSION['nombre_P']=$datos->nombre_P;
@@ -51,6 +57,12 @@ if (!empty($_POST['agregarC'])) {
             echo "Obra Social <input name='obraC' style='width: 200px' value='' type='text' class='form-control'  >";
             echo "Medico <input name='medicoC' style='width: 200px' value='' type='text' class='form-control'  >";
             echo "<input name='fechaC' style='visibility:hidden' style='width: 200px' value='' type='text' class='form-control' disabled  >";
+            
+            echo'
+                <script type="text/javascript">;
+                document.getElementById("buscarCliente").setAttribute("type", "hidden");
+                document.getElementById("guardar").setAttribute("type", "hidden");
+                </script>';
         }
     }
     else {
