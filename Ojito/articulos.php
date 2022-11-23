@@ -154,12 +154,11 @@ if (!empty($_SESSION['id'])) {
                                             
                                            // include "../controlador/controlador_agregar_clientes.php"; // agregar clientes
                                            // include "../controlador/controlador_validar_clientes.php"; // validar clientes ?> 
-                                           <div id="resultado2">
-                                           </div>
-                                           
-                                           <tr>
-                                        <th> 
-                                        </th>
+                                        <div id="resultado2">
+                                            </div>                                           
+                                            <tr>
+                                            <th> 
+                                            </th>
                                     </tr>
                                     <tr>
                                         <td>Identificador</td>
@@ -167,8 +166,7 @@ if (!empty($_SESSION['id'])) {
                                     </tr>
                                     <th scope="row" width="25%"><button  id="listarArtId"name="ListaA" type="button" class="btn btn-primary">Lista de Articulos</button></th>
                                     <th scope="row"><input name="buscarA" type="submit" value="Buscar Articulos" id="buscarArtId"class="btn btn-primary"></input></th>
-                                    <th scope="row" width="25%"><input  id="agregarArtId"name="agregarA" type="submit" class="btn btn-primary"value="Agregar Articulo"></input ></th>
-                                 
+                                    <th scope="row" width="25%"><input  id="agregarArtId"name="agregarA" type="submit" class="btn btn-primary"value="Agregar Articulo"></input ></th>                                 
                                     <th scope="row" width="25%"><input  name="cancelarArtId"type="button" class="btn btn-danger"value="Cancelar"onClick="location.href='articulos.php'"></input ></th>
                                     </form>
                         </tr>

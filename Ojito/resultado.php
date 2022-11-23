@@ -42,7 +42,7 @@ document.getElementById("agregarArtId").setAttribute("type", "hidden");
  
  
 
- </script>'
+ </script>';
  
 
 

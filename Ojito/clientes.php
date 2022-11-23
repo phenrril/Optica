@@ -21,8 +21,10 @@ if (!empty($_SESSION['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
-    <title>titulo pestaña</title>
+
+    <title>Ojito de Sol</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -34,6 +36,8 @@ if (!empty($_SESSION['id'])) {
 </head>  
 
 <body id="page-top">
+
+<script src="/script.js"></script>    
 
     <?php /* session_start(); 
 
@@ -146,20 +150,20 @@ if (!empty($_SESSION['id'])) {
                                 <table WIDTH="50%" class="table table-borderless">
                                     <tr>
                                         <th></th>
-                                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="formularioArt">
                                             <?php require "../conexion.php";
                                             include "../controlador/controlador_clientes.php"; //buscar clientes
                                            // include "../controlador/controlador_agregar_clientes.php"; // agregar clientes
                                            // include "../controlador/controlador_validar_clientes.php"; // validar clientes ?> 
-                                    </tr>
+                                    </tr id="resultado2">
                                     <tr>
                                         <td>DNI</td>
-                                        <td><input id="text" placeholder="coloque DNI" name="dniC" type="text" class="form-control" spellcheck="false" data-ms-editor="true" autofocus></td>
+                                        <td><input id="text" placeholder="coloque DNI" name="dniC" id="dniCliente" type="text" class="form-control" spellcheck="false" data-ms-editor="true" autofocus></td>
                                     </tr>
-                                    <th scope="row" width="25%"><input value="Buscar Cliente" name="buscarC" type="submit" class="btn btn-primary"></input></th>
-                                    <th scope="row" width="25%"><input value="Agregar Cliente" name="agregarC" type="submit" class="btn btn-primary"></input></th>
-                                    <th scope="row" width="25%"><input value="Guardar y cobrar" name="validarC" type="submit" class="btn btn-primary"></input></th>
-                                    <th scope="row" width="25%"><input value="Cancelar" name="cancelarC" type="submit" class="btn btn-primary" ></input></th>
+                                    <th scope="row" width="25%"><input value="Buscar Cliente" name="buscarC" id="buscarCliente" type="button" class="btn btn-primary"></input></th>
+                                    <th scope="row" width="25%"><input value="Agregar Cliente" name="agregarC" id="agregarCliente" name="agregarC" type="submit" class="btn btn-primary"></input></th>
+                                    <th scope="row" width="25%"><input value="Guardar y cobrar" name="validarC" id="guardar" type="submit" class="btn btn-primary"></input></th>
+                                    <th scope="row" width="25%"><input value="Cancelar" name="cancelarC" type="submit" id="cancelar" class="btn btn-primary" ></input></th>
                                     </form>
                         </tr>
                         </tbody>
@@ -210,6 +214,19 @@ if (!empty($_SESSION['id'])) {
             </div>
         </div>
     </div>
+
+    <script >   
+    $("#buscarCliente").click(function(){   
+            $.ajax({
+                    url: "resultado.php",
+                    type: "post",
+                    data: $("#formularioArt").serialize(),
+                    success: function(resultado){
+                            $("#resultado2").html(resultado);
+                    }
+            });
+    });
+    </script>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
