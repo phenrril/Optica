@@ -159,7 +159,7 @@ if (!empty($_SESSION['id'])) {
                                     <th scope="row" width="25%"><input value="Buscar Cliente" name="buscarC" type="submit" class="btn btn-primary"></input></th>
                                     <th scope="row" width="25%"><input value="Agregar Cliente" name="agregarC" type="submit" class="btn btn-primary"></input></th>
                                     <th scope="row" width="25%"><input value="Guardar y cobrar" name="validarC" type="submit" class="btn btn-primary"></input></th>
-                                    <th scope="row" width="25%"><input value="Cancelar" name="cancelarC" type="submit" class="btn btn-primary"></input></th>
+                                    <th scope="row" width="25%"><input value="Cancelar" name="cancelarC" type="submit" class="btn btn-primary" ></input></th>
                                     </form>
                         </tr>
                         </tbody>
