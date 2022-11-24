@@ -72,7 +72,16 @@ if (!empty($_POST['agregarC'])) {
 
 // controlador validar clientes---------------------------------------
 
-if (!empty($_POST['validarC']) and !empty($_POST['dniCliente']) and is_numeric($_POST['dniCliente'])) {
+if (!empty($_POST['validarC'])) {
+    if(!empty($_POST['dniCliente']) ){
+    $dni = $_POST['dniCliente'];
+    $sql=$conexion->query(" SELECT dni_P FROM pacientes WHERE dni_P='$dni' ");
+        if ($datos=$sql->fetch_object()) {
+            echo "<div class='alert alert-danger'>Cliente ya existe </div>"; 
+        }
+        else{ 
+    if (!empty($_POST['validarC']) and !empty($_POST['dniCliente'])){
+
     if(is_numeric ($_POST['dniCliente'])){
     $dni = $_POST['dniCliente'];
     }
@@ -92,7 +101,6 @@ if (!empty($_POST['validarC']) and !empty($_POST['dniCliente']) and is_numeric($
     $fcha = date("Y-m-d");
     $fecha = $fcha;
     $medico = $_POST['medicoC'];
-    
     $sql=$conexion->query(" INSERT INTO pacientes (dni_P, nombre_P, apellido_P, domicilio_P, telefono_P, obra_S, fecha_P, medico_P) VALUES ('$dni', '$nombre', '$apellido', '$domicilio', '$telefono', '$obra', '$fecha', '$medico')");
  if ($sql) {
     echo "<script>alert('Cliente agregado correctamente')</script>";
@@ -102,7 +110,15 @@ if (!empty($_POST['validarC']) and !empty($_POST['dniCliente']) and is_numeric($
     echo "<script>window.location='clientes.php'</script>";
     unset($dni, $nombre, $apellido, $domicilio, $telefono, $obra, $fecha, $fcha, $medico);
 }
+    }}
 }
+else{
+    echo "<div class='alert alert-danger'>Datos Erroneos </div>";
+    unset($dni, $nombre, $apellido, $domicilio, $telefono, $obra, $fecha, $fcha, $medico);
+}
+}
+
+
 // Boton Cancelar------------------------------------------
 
 if(!empty($_POST['cancelarC'])){

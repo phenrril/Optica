@@ -160,7 +160,7 @@ if (!empty($_SESSION['id'])) {
                                         <td>DNI</td>
                                         <td><input id="text" placeholder="coloque DNI" name="dniC" id="dniCliente" type="text" class="form-control" spellcheck="false" data-ms-editor="true" autofocus></td>
                                     </tr>
-                                    <th scope="row" width="25%"><input value="Buscar Cliente" name="buscarC" id="buscarCliente" type="button" class="btn btn-primary"></input></th>
+                                    <th scope="row" width="25%"><input value="Buscar Cliente" name="buscarC" id="buscarCliente" type="submit" class="btn btn-primary"></input></th>
                                     <th scope="row" width="25%"><input value="Agregar Cliente" name="agregarC" id="agregarCliente" name="agregarC" type="submit" class="btn btn-primary"></input></th>
                                     <th scope="row" width="25%"><input value="Guardar y cobrar" name="validarC" id="guardar" type="submit" class="btn btn-primary"></input></th>
                                     <th scope="row" width="25%"><input value="Cancelar" name="cancelarC" type="submit" id="cancelar" class="btn btn-primary" ></input></th>
