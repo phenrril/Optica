@@ -61,7 +61,7 @@ if (!empty($_SESSION['id'])) {
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item ">
                 <a class="nav-link" href="Clientes.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span></span>Clientes</a>
@@ -73,7 +73,7 @@ if (!empty($_SESSION['id'])) {
                 Interface
              </div> -->
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item active" >
                 <a class="nav-link" href="articulos.php">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Articulos</span></a>
@@ -165,11 +165,14 @@ if (!empty($_SESSION['id'])) {
                                         <td>Identificador</td>
                                         <td><input  placeholder="Coloque el Modelo" required name="identificadorA"id="identificadorArtId" type="text" class="form-control" spellcheck="false" data-ms-editor="true" autofocus></td>
                                     </tr>
-                                    <th scope="row" width="25%"><button  id="listarArtId"name="ListaA" type="button" class="btn btn-primary">Lista de Articulos</button></th>
-                                    <th scope="row"><input name="buscarA" type="submit" value="Buscar Articulos" id="buscarArtId"class="btn btn-primary"></input></th>
+                                    <th scope="row" width="25%"><input  id="listarArtId"name="ListaA" type="button" value="Lista de Articulos"class="btn btn-primary"></input></th>
+                                   
+                                    <th scope="row"><input name="buscarA" type="submit" value="Buscar Articulos" id="buscarArtId"class="btn btn-primary"ondblclick="cambiaANumero()"></input></th>
                                     <th scope="row" width="25%"><input  id="agregarArtId"name="agregarA" type="submit" class="btn btn-primary"value="Agregar Articulo"></input ></th>
+                                   
                                  
                                     <th scope="row" width="25%"><input  name="cancelarArtId"type="button" class="btn btn-danger"value="Cancelar"onClick="location.href='articulos.php'"></input ></th>
+                                    <th scope="row" width="25%"><input  id="agregarArtId2"name="A2" type="hidden" value="Guardar ARticulo"class="btn btn-primary"></input></th>
                                     </form>
                         </tr>
                         </tbody>
@@ -217,11 +220,39 @@ if (!empty($_SESSION['id'])) {
     
     
     </script>
-    <script>
-function limpiar() {   
- document.getElementById("identificadorArtId").innerHTML = "gfhfgghfhfg";   
-}   
-</script>
+    <script >
+    
+    $("#agregarArtId").click(function(){
+    
+            $.ajax({
+                    url: "resultado3.php",
+                    type: "post",
+                    data: $("#formularioArt").serialize(),
+                    success: function(resultado){
+                            $("#resultado2").html(resultado);
+    
+                    }
+    
+    
+            });
+    
+    
+    
+    
+    
+    
+    });
+    
+    
+    
+    
+    </script>
+    
+    
+    
+    
+    
+    </script>
 
 
 

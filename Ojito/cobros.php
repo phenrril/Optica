@@ -181,7 +181,7 @@ if (!empty($_SESSION['id'])) {
                         </tr>
                         <tr>
                             <td>id cliente</td>
-                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                            <td><input id="text" name="text"value="<?php echo "hola";?>" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
                             <td>Cod Producto</td>
                             <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
                             <td>Nombre producto</td>

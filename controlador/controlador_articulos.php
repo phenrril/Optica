@@ -25,8 +25,25 @@ if (!empty($_POST['buscarA'])) {
 			$marca=$datos->marca_A;
 			$genero=$datos->id_Genero;
 			$precio=$datos->precio_A;
+
 			
 		echo "<div class='alert alert-success'>Producto Encontrado </div>";
+		echo'
+<script type="text/javascript">;
+
+document.getElementById("agregarArtId").setAttribute("type", "hidden");
+document.getElementById("identificadorArtId").setAttribute("type", "hidden");
+document.getElementById("buscarArtId").setAttribute("type", "hidden");
+
+document.getElementById("listarArtId").setAttribute("type", "hidden");
+
+
+
+
+ 
+ 
+
+ </script>';
 		//echo "identificador - marca - genero - precio"."<br>";
 		//echo $identificador ." ".$marca." ".$genero." $".$precio;
 		/*echo"

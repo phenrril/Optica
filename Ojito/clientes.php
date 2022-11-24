@@ -154,12 +154,12 @@ if (!empty($_SESSION['id'])) {
                                     </tr>
                                     <tr>
                                         <td>DNI</td>
-                                        <td><input id="text" placeholder="coloque DNI" name="dniC" type="text" class="form-control" spellcheck="false" data-ms-editor="true" autofocus></td>
+                                        <td><input id="text" placeholder="coloque DNI" name="dniC" id="dniId"type="text" class="form-control" spellcheck="false" data-ms-editor="true" autofocus></td>
                                     </tr>
                                     <th scope="row" width="25%"><input value="Buscar Cliente" name="buscarC" type="submit" class="btn btn-primary"></input></th>
                                     <th scope="row" width="25%"><input value="Agregar Cliente" name="agregarC" type="submit" class="btn btn-primary"></input></th>
-                                    <th scope="row" width="25%"><input value="Guardar y cobrar" name="validarC" type="submit" class="btn btn-primary"></input></th>
-                                    <th scope="row" width="25%"><input value="Cancelar" name="cancelarC" type="submit" class="btn btn-primary" ></input></th>
+                                    <th scope="row" width="25%"><input value="Guardar y cobrar" name="validarC" type="submit" class="btn btn-primary"onClick="location.href='cobros.php'"></input></th>
+                                    <th scope="row" width="25%"><input value="Cancelar" name="cancelarC" type="submit" class="btn btn-primary" onClick="location.href='clientes.php'"></input></th>
                                     </form>
                         </tr>
                         </tbody>

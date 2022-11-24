@@ -34,7 +34,7 @@ document.getElementById("agregarArtId").setAttribute("type", "hidden");
 document.getElementById("identificadorArtId").setAttribute("type", "hidden");
 document.getElementById("buscarArtId").setAttribute("type", "hidden");
 
-document.getElementById("agregarArtId").setAttribute("type", "hidden");
+document.getElementById("listarArtId").setAttribute("type", "hidden");
 
 
 
