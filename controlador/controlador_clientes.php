@@ -102,11 +102,21 @@ if (!empty($_POST['validarC'])) {
     $fecha = $fcha;
     $medico = $_POST['medicoC'];
     $sql=$conexion->query(" INSERT INTO pacientes (dni_P, nombre_P, apellido_P, domicilio_P, telefono_P, obra_S, fecha_P, medico_P) VALUES ('$dni', '$nombre', '$apellido', '$domicilio', '$telefono', '$obra', '$fecha', '$medico')");
- if ($sql) {
+ if ($sql) {    
+    $sql=$conexion->query(" SELECT * FROM pacientes WHERE dni_P='$dni' ");
+    if ($datos=$sql->fetch_object()) {
+            $_SESSION['idcliente']=$datos->id;
+            $_SESSION['nombre_P']=$datos->nombre_P;
+            $_SESSION['apellido_P']=$datos->apellido_P;
+    }
+
+
+
     echo "<script>alert('Cliente agregado correctamente')</script>";
-    echo "<script>window.location='clientes.php'</script>";
+    echo "<script>window.location='cobros.php'</script>";
+
 } else {
-    echo "<script>alert('Error al agregar cliente')</script>";
+    echo "<script>alert('Error al agregar cliente')</>";
     echo "<script>window.location='clientes.php'</script>";
     unset($dni, $nombre, $apellido, $domicilio, $telefono, $obra, $fecha, $fcha, $medico);
 }

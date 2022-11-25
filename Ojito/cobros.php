@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php 
+<?php
+
+use phpseclib3\Math\BigInteger\Engines\PHP;
+
 session_start();
 if (!empty($_SESSION['id'])) {
   //echo "positivo";
@@ -181,7 +184,7 @@ if (!empty($_SESSION['id'])) {
                         </tr>
                         <tr>
                             <td>id cliente</td>
-                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                            <td><?php echo "<input name='nombreC' style='width: 200px' value=" .  $_SESSION['idcliente'] .  " type='text' class='form-control' disabled >"; ?></td>
                             <td>Cod Producto</td>
                             <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
                             <td>Nombre producto</td>
@@ -192,7 +195,7 @@ if (!empty($_SESSION['id'])) {
                     <tbody>
                         <tr>
                             <td>Nombre</td>
-                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                            <td><?php echo "<input name='nombreC' style='width: 200px' value=" .  $_SESSION['nombre_P'] .  " type='text' class='form-control' disabled >"; ?></td>
                             <td>Cristales</td>
                             <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
                             <td>Precio Cristales</td>
@@ -201,7 +204,7 @@ if (!empty($_SESSION['id'])) {
                         </tr>
                         <tr>
                             <td>Apellido</td>
-                            <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
+                            <td><?php echo "<input name='nombreC' style='width: 200px' value=" .  $_SESSION['apellido_P'] .  " type='text' class='form-control' disabled >"; ?></td>
                             <td>Observaciones</td>
                             <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
                             <td>Tipo Lentes</td>
