@@ -163,16 +163,25 @@ if (!empty($_SESSION['id'])) {
                                     </tr>
                                     <tr>
                                         <td>Identificador</td>
-                                        <td><input  placeholder="Coloque el Modelo" required name="identificadorA"id="identificadorArtId" type="text" class="form-control" spellcheck="false" data-ms-editor="true" autofocus></td>
+                                        <td><input  placeholder="Coloque el Modelo" required name="identificadorA"id="identificadorArtId" type="text" class="form-control" spellcheck="false" data-ms-editor="true" autofocus>
+                                       
+                                    
+                                    
+                                    </tr><tr><input  placeholder="Coloque el Identificador" required name="identificador_art"id="identificadorArtIdpr2" type="hidden" class="form-control" spellcheck="false" data-ms-editor="true" autofocus></tr>
+                                    </tr><tr><input  placeholder="Coloque la Marca" required name="marca_art"id="identificadorArtIdpr3" type="hidden" class="form-control" spellcheck="false" data-ms-editor="true" autofocus></tr>
+                                    </tr><tr><input  placeholder="Coloque la cantidad" required name="cantidad_art"id="identificadorArtIdpr4" type="hidden" class="form-control" spellcheck="false" data-ms-editor="true" autofocus></tr>
+                                    </tr><tr><input  placeholder="Coloque el Precio Bruto" required name="precioN_A"id="identificadorArtIdpr5" type="hidden" class="form-control" spellcheck="false" data-ms-editor="true" autofocus></tr>
+                                    </tr><tr><input  placeholder="Coloque el Precio Neto" required name="precioB_A"id="identificadorArtIdpr1" type="hidden" class="form-control" spellcheck="false" data-ms-editor="true" autofocus></tr>
                                     </tr>
+                                    <th scope="row" width="25%"><input  name="cancelarArtId"type="button" class="btn btn-danger"value="Cancelar"onClick="location.href='articulos.php'"></input ></th>
                                     <th scope="row" width="25%"><input  id="listarArtId"name="ListaA" type="button" value="Lista de Articulos"class="btn btn-primary"></input></th>
                                    
                                     <th scope="row"><input name="buscarA" type="submit" value="Buscar Articulos" id="buscarArtId"class="btn btn-primary"ondblclick="cambiaANumero()"></input></th>
                                     <th scope="row" width="25%"><input  id="agregarArtId"name="agregarA" type="submit" class="btn btn-primary"value="Agregar Articulo"></input ></th>
                                    
                                  
-                                    <th scope="row" width="25%"><input  name="cancelarArtId"type="button" class="btn btn-danger"value="Cancelar"onClick="location.href='articulos.php'"></input ></th>
-                                    <th scope="row" width="25%"><input  id="agregarArtId2"name="A2" type="hidden" value="Guardar ARticulo"class="btn btn-primary"></input></th>
+                                    
+                                    <tr scope="row" width="25%"><input  id="agregarArtId2"name="A2" type="hidden" value="Guardar ARticulo"class="btn btn-primary"></input></tr>
                                     </form>
                         </tr>
                         </tbody>
@@ -249,6 +258,34 @@ if (!empty($_SESSION['id'])) {
     </script>
     <script >
     
+    $("#agregar_art_id").click(function(){
+    
+            $.ajax({
+                    url: "resultado3.php",
+                    type: "post",
+                    data: $("#formularioArt").serialize(),
+                    success: function(resultado){
+                            $("#resultado2").html(resultado);
+    
+                    }
+    
+    
+            });
+    
+    
+    
+    
+    
+    
+    });
+    
+    
+    
+    
+    </script>
+    
+    <script >
+    
     $("#agregarArtId2").click(function(){
     
             $.ajax({
@@ -274,8 +311,6 @@ if (!empty($_SESSION['id'])) {
     
     
     </script>
-    
-    
     
     
     

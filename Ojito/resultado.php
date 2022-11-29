@@ -11,16 +11,15 @@ require "../conexion.php";
 
         $sql=$conexion->query(" SELECT * FROM armazon ");
         if ($datos=$sql->fetch_object()) {
-            $_SESSION['id']=$datos->id;
+           // $_SESSION['id']=$datos->id;
             //echo "el producto ya existe";
                 
 
-
-
-    
+            
+            //echo mysqli_fetch_array($sql)[1];
 
             while ($fila = mysqli_fetch_array($sql)){
-            echo "<tr><td>".$fila['id']."</td><td>".$fila['marca_A']."</td><td>".$fila['identificador_A']."</td><td>".$fila['id_Genero']."</td><td>".$fila['precio_A'];
+            echo "<tr><td>".$fila['id']."</td><td>".$fila['marca_A']."</td><td>".$fila['identificador_A']."</td><td>".$fila['cantidad']."</td><td>".$fila['precioneto_A']."</td><td>".$fila['preciobruto_A'];
                 echo "<br />";
               }
 

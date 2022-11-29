@@ -23,8 +23,9 @@ if (!empty($_POST['buscarA'])) {
 		if ($datos=$sql->fetch_object()) {
 			$identificador=$datos->identificador_A;
 			$marca=$datos->marca_A;
-			$genero=$datos->id_Genero;
-			$precio=$datos->precio_A;
+			$cantidad=$datos->cantidad;
+			$precioBruto=$datos->preciobruto_A;
+			$precioNeto=$datos->preciobruto_A;
 
 			
 		echo "<div class='alert alert-success'>Producto Encontrado </div>";
@@ -60,8 +61,9 @@ document.getElementById("listarArtId").setAttribute("type", "hidden");
 					
 							<th>Identificador</th>
 							<th>Marca</th>
-							<th>Id Genero</th>
-							<th>Precio</th>
+							<th>Cantidad</th>
+							<th>Precio Bruto</th>
+							<th>Precio Neto</th>
 							
 						
 					
@@ -69,8 +71,9 @@ document.getElementById("listarArtId").setAttribute("type", "hidden");
 							
 								<td>$identificador</td>
 								<td>$marca</td>
-								<td>$genero</td>
-								<td>$precio</td>
+								<td>$cantidad</td>
+								<td>$precioBruto</td>
+								<td>$precioNeto</td>
 								
 							
 					

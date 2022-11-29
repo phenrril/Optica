@@ -2,7 +2,7 @@
 <html lang="en">
 <?php
 
-use phpseclib3\Math\BigInteger\Engines\PHP;
+
 
 session_start();
 if (!empty($_SESSION['id'])) {
@@ -184,11 +184,7 @@ if (!empty($_SESSION['id'])) {
                         </tr>
                         <tr>
                             <td>id cliente</td>
-<<<<<<< HEAD
                             <td><input id="text" name="text"value="<?php echo "hola";?>" type="text" class="form-control" spellcheck="false" data-ms-editor="true" disabled></td>
-=======
-                            <td><?php echo "<input name='nombreC' style='width: 200px' value=" .  $_SESSION['idcliente'] .  " type='text' class='form-control' disabled >"; ?></td>
->>>>>>> 114f0a91264840fd6b03f6b0a3c50101a0d3edb8
                             <td>Cod Producto</td>
                             <td><input id="text" name="text" type="text" class="form-control" spellcheck="false" data-ms-editor="true"></td>
                             <td>Nombre producto</td>

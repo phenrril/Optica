@@ -158,21 +158,12 @@ if (!empty($_SESSION['id'])) {
                                     </tr id="resultado2">
                                     <tr>
                                         <td>DNI</td>
-<<<<<<< HEAD
                                         <td><input id="text" placeholder="coloque DNI" name="dniC" id="dniId"type="text" class="form-control" spellcheck="false" data-ms-editor="true" autofocus></td>
                                     </tr>
                                     <th scope="row" width="25%"><input value="Buscar Cliente" name="buscarC" type="submit" class="btn btn-primary"></input></th>
                                     <th scope="row" width="25%"><input value="Agregar Cliente" name="agregarC" type="submit" class="btn btn-primary"></input></th>
                                     <th scope="row" width="25%"><input value="Guardar y cobrar" name="validarC" type="submit" class="btn btn-primary"onClick="location.href='cobros.php'"></input></th>
                                     <th scope="row" width="25%"><input value="Cancelar" name="cancelarC" type="submit" class="btn btn-primary" onClick="location.href='clientes.php'"></input></th>
-=======
-                                        <td><input id="text" placeholder="coloque DNI" name="dniC" id="dniCliente" type="text" class="form-control" spellcheck="false" data-ms-editor="true" autofocus></td>
-                                    </tr>
-                                    <th scope="row" width="25%"><input value="Buscar Cliente" name="buscarC" id="buscarCliente" type="submit" class="btn btn-primary"></input></th>
-                                    <th scope="row" width="25%"><input value="Agregar Cliente" name="agregarC" id="agregarCliente" name="agregarC" type="submit" class="btn btn-primary"></input></th>
-                                    <th scope="row" width="25%"><input value="Guardar y cobrar" name="validarC" id="guardar" type="submit" class="btn btn-primary"></input></th>
-                                    <th scope="row" width="25%"><input value="Cancelar" name="cancelarC" type="submit" id="cancelar" class="btn btn-primary" ></input></th>
->>>>>>> 0e695cee76e75a7c2014096a90636555bd754a7b
                                     </form>
                         </tr>
                         </tbody>

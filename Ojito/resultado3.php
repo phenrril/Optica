@@ -2,22 +2,31 @@
 
 
 
-echo "Identificador <input name='identificador_art' style='width: 200px' value='' type='text' class='form-control' autofocus >";
-echo "Marca <input name='marca_art' style='width: 200px' value='' type='text' class='form-control'  >";
-echo "Id Genero <input name='aidgenero_art' style='width: 200px' value='' type='text' class='form-control'  >";
-echo "Precio <input name='precio_art' style='width: 200px' value='' type='text' class='form-control'  >";
-echo "<input name='agregar'id='agregar_art_id' style='visibility:hidden' style='width: 200px' type='button' value='guardar' class='form-control' disabled  >";
+//echo "DNI <input name='dniCliente' style='width: 200px' value='' type='text' class='form-control' autofocus >";
+/*echo "Nombre <input name='nombreC' style='width: 200px' value='' type='text' class='form-control'  >";
+echo "Apellido <input name='apellidoC' style='width: 200px' value='' type='text' class='form-control'  >";
+echo "Domicilio <input name='domicilioC' style='width: 200px' value='' type='text' class='form-control'  >";
+echo "Telefono <input name='telefonoC' style='width: 200px' value='' type='text' class='form-control'  >";
+echo "Obra Social <input name='obraC' style='width: 200px' value='' type='text' class='form-control'  >";
+echo "Medico <input name='medicoC' style='width: 200px' value='' type='text' class='form-control'  >";
+echo "<input name='fechaC' style='visibility:hidden' style='width: 200px' value='' type='text' class='form-control' disabled  >";
+echo "<input name='agregar' style='visibility:hidden' style='width: 200px' type='button' value='guardar' class='form-control' disabled  >";
 
-
+*/echo "<br>";
 echo'
 <script type="text/javascript">;
 
 document.getElementById("agregarArtId").setAttribute("type", "hidden");
-document.getElementById("agregarArtId2").setAttribute("type", "button");
 document.getElementById("identificadorArtId").setAttribute("type", "hidden");
-document.getElementById("buscarArtId").setAttribute("type", "hidden");
-
 document.getElementById("listarArtId").setAttribute("type", "hidden");
+document.getElementById("buscarArtId").setAttribute("type", "hidden");
+document.getElementById("agregarArtId2").setAttribute("type", "button");
+document.getElementById("identificadorArtIdpr1").setAttribute("type", "text");
+document.getElementById("identificadorArtIdpr2").setAttribute("type", "text");
+document.getElementById("identificadorArtIdpr3").setAttribute("type", "text");
+document.getElementById("identificadorArtIdpr4").setAttribute("type", "text");
+document.getElementById("identificadorArtIdpr5").setAttribute("type", "text");
+
 
 
 
