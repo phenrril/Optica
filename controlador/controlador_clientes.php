@@ -1,5 +1,6 @@
 <?php 
 
+
 if (!empty($_POST['buscarC'])) {
 	if (!empty($_POST['dniC']) and is_numeric($_POST['dniC']))   {
 		$dni=$_POST['dniC'];
@@ -35,7 +36,13 @@ else {
 }
 // controlador agregar cliente----------------------------------------
 
-if (!empty($_POST['agregarC'])) {
+if (isset($_POST['agregarC'])) {
+      
+   
+        echo '<script>document.getElementById("buscar").style.display = "none";</script>';
+
+
+
     if (!empty($_POST['dniC']) and is_numeric($_POST['dniC']))   {
         $dni=$_POST['dniC'];
         $sql=$conexion->query(" SELECT dni_P FROM pacientes WHERE dni_P='$dni' ");

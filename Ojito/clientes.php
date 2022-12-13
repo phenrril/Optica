@@ -152,18 +152,19 @@ if (!empty($_SESSION['id'])) {
                                 <table WIDTH="50%" class="table table-borderless">
                                     <tr>
                                         <th></th>
-                                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="formularioArt">
+                                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="enviardatos">
                                             <?php require "../conexion.php";
-                                            include "../controlador/controlador_clientes.php"; //buscar clientes
+                                           // include "../controlador/controlador_clientes.php"; //buscar clientes
                                            // include "../controlador/controlador_agregar_clientes.php"; // agregar clientes
                                            // include "../controlador/controlador_validar_clientes.php"; // validar clientes ?> 
-                                    </tr id="resultado2">
+                                    </tr>
                                     <tr>
+                                        <div id="agregar"></div>
                                         <td>DNI</td>
                                         <td><input id="text" placeholder="coloque DNI" name="dniC" id="dniId"type="text" class="form-control" spellcheck="false" data-ms-editor="true" autofocus></td>
                                     </tr>
-                                    <th scope="row" width="25%"><input value="Buscar Cliente" name="buscarC" type="submit" class="btn btn-primary"></input></th>
-                                    <th scope="row" width="25%"><input value="Agregar Cliente" name="agregarC" type="submit" class="btn btn-primary"></input></th>
+                                    <th scope="row" width="25%"><input value="Buscar Cliente" name="buscarC" id="buscarC" type="button" class="btn btn-primary"></input></th>
+                                    <th scope="row" width="25%"><input value="Agregar Cliente" name="agregarCliente" id="agregarC" type="button" class="btn btn-primary" ></input></th>
                                     <th scope="row" width="25%"><input value="Guardar y cobrar" name="validarC" type="submit" class="btn btn-primary"onClick="location.href='cobros.php'"></input></th>
                                     <th scope="row" width="25%"><input value="Cancelar" name="cancelarC" type="submit" class="btn btn-primary" onClick="location.href='clientes.php'"></input></th>
                                     </form>
@@ -218,13 +219,13 @@ if (!empty($_SESSION['id'])) {
     </div>
 
     <script >   
-    $("#buscarCliente").click(function(){   
+    $("#agregarC").click(function(){   
             $.ajax({
-                    url: "resultado.php",
+                    url: "agregarCliente.php",
                     type: "post",
-                    data: $("#formularioArt").serialize(),
-                    success: function(resultado){
-                            $("#resultado2").html(resultado);
+                    data: $("#enviardatos").serialize(),
+                    success: function(agregar){
+                            $("#agregar").html(agregar);
                     }
             });
     });
@@ -239,6 +240,9 @@ if (!empty($_SESSION['id'])) {
 
     <!-- Page level plugins -->
     <script src="vendor/chart.js/Chart.min.js"></script>
+
+
+
 
 </body>
 
