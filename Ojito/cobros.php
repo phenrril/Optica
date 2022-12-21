@@ -182,9 +182,9 @@ if (!empty($_SESSION['id'])) {
                         <tr><td><b>D.N.I : </b><?php echo "34408132"; ?></td></tr>
                     </thead>
                 </table>
-                <table class="table table-borderless">
+                <table class="table table-borderless" id="tablaMayor">
                 <td>
-                <table class="table table-borderless">
+                <table class="table table-borderless" id="tablaGracuadiones">
                     <tr>
                         <td><b>Graduacion Lejos </b></td>
                     </tr>
@@ -209,39 +209,67 @@ if (!empty($_SESSION['id'])) {
                 </table>
                 </td>
                 <td>
-                <table class="table table-borderless">
+                <table class="table table-borderless" id="tablaProductos">
                     <tr>
-                        <td><b>Graduacion Lejos </b></td>
+                        <td></td>
                     </tr>
                     <tr>
-                        <td><b>Ojo D:</b><input type="text" size="4">&nbsp&nbsp&nbsp<input type="text" size="4">&nbsp&nbsp&nbsp<input type="text" size="4"></td>
+                        <td><b>Codigo Producto:</b><input type="text" size="6"></td>
                     </tr>
                     <tr>
-                    <td><b>Ojo I: &nbsp</b><input type="text" size="4">&nbsp&nbsp&nbsp<input type="text" size="4">&nbsp&nbsp&nbsp<input type="text" size="4"></td>
+                    <td><b>Nomb Producto: &nbsp</b><input type="text" size="6"></td>
                     </tr>
                     <tr>
-                        <td><b>Graduacion Cerca </b></td>
+                        <td ><b>Cristales:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b><input type="text" size="6"></td>
                     </tr>
                     <tr>
-                        <td><b>Ojo D:</b><input type="text" size="4">&nbsp&nbsp&nbsp<input type="text" size="4">&nbsp&nbsp&nbsp<input type="text" size="4"></td>
+                    <td><b>Precio Cristales: &nbsp</b><input type="text" size="6"></td>
                     </tr>
                     <tr>
-                    <td><b>Ojo I: &nbsp</b><input type="text" size="4">&nbsp&nbsp&nbsp<input type="text" size="4">&nbsp&nbsp&nbsp<input type="text" size="4"></td>
+                    <td><b>Observaciones: &nbsp&nbsp&nbsp</b><input type="text" size="6"></td>
                     </tr>
                     <tr>
-                        <td><b>ADD:  &nbsp</b><input type="text" size="4"></td>
+                    <td><input type="button" value="Agregar"></td>
                     </tr>
                 </table>
                 </td>
                 <td> </td>
                 <td> </td>
                 </table>
-
-
-
-
-
-
+                <table cellpadding="12" id="tablaProdSeleccion" style="margin: 0 auto; border:0;">
+                <tr>
+                    <td hidden><b> Producto: &nbsp</b><input type="text" size="25" disabled ><input type="button" value="Quitar"></td>
+                </tr>
+                <tr>
+                    <td hidden><b> Producto: &nbsp</b><input type="text" size="25" disabled><input type="button" value="Quitar"></td>
+                </tr>
+                <tr>
+                    <td hidden><b> Producto: &nbsp</b><input type="text" size="25" disabled><input type="button" value="Quitar"></td>
+                </tr>
+                <tr>
+                    <td hidden><b> Producto: &nbsp</b><input type="text" size="25" disabled> <input type="button" value="Quitar"></td>
+                </tr>
+                <tr>
+                    <td hidden><b> Producto: &nbsp</b><input type="text" size="25" disabled><input type="button" value="Quitar"></td>
+                </tr>
+                </table>
+                <table cellpadding="12" id="tablaTotales" style="margin: 0 auto; border:0;">
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><b> Descuento: &nbsp</b><input type="text" size="6" disabled></td>
+                </tr>
+                <tr>
+                    <td><b> Total: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b><input type="text" size="6"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><b> Abona: &nbsp</b><input type="text" size="6"><b> Resta: &nbsp</b><input type="text" size="6"></td>
+                </tr>
+                </table>
 
 
 
