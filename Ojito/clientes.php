@@ -154,17 +154,17 @@ if (!empty($_SESSION['id'])) {
                                         <th></th>
                                         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="enviardatos">
                                             <?php require "../conexion.php";
-                                           // include "../controlador/controlador_clientes.php"; //buscar clientes
-                                           // include "../controlador/controlador_agregar_clientes.php"; // agregar clientes
-                                           // include "../controlador/controlador_validar_clientes.php"; // validar clientes ?> 
+                                            include "../controlador/controlador_clientes.php"; //buscar clientes
+                                        //    include "../controlador/controlador_agregar_clientes.php"; // agregar clientes
+                                        //    include "../controlador/controlador_validar_clientes.php"; // validar clientes ?> 
                                     </tr>
                                     <tr>
                                         <div id="agregar"></div>
                                         <td>DNI</td>
                                         <td><input id="text" placeholder="coloque DNI" name="dniC" id="dniId"type="text" class="form-control" spellcheck="false" data-ms-editor="true" autofocus></td>
                                     </tr>
-                                    <th scope="row" width="25%"><input value="Buscar Cliente" name="buscarC" id="buscarC" type="button" class="btn btn-primary"></input></th>
-                                    <th scope="row" width="25%"><input value="Agregar Cliente" name="agregarCliente" id="agregarC" type="button" class="btn btn-primary" ></input></th>
+                                    <th scope="row" width="25%"><input value="Buscar Cliente" name="buscarC" id="buscarC" type="submit" class="btn btn-primary"></input></th>
+                                    <th scope="row" width="25%"><input value="Agregar Cliente" name="agregarCliente" id="agregarC" type="submit" class="btn btn-primary" ></input></th>
                                     <th scope="row" width="25%"><input value="Guardar y cobrar" name="validarC" type="submit" class="btn btn-primary"onClick="location.href='cobros.php'"></input></th>
                                     <th scope="row" width="25%"><input value="Cancelar" name="cancelarC" type="submit" class="btn btn-primary" onClick="location.href='clientes.php'"></input></th>
                                     </form>

@@ -36,12 +36,8 @@ else {
 }
 // controlador agregar cliente----------------------------------------
 
-if (isset($_POST['agregarC'])) {
-      
-   
-        echo '<script>document.getElementById("buscar").style.display = "none";</script>';
-
-
+if (!empty($_POST['agregarCliente'])) {
+        //echo '<script>document.getElementById("buscar").style.display = "none";</script>';
 
     if (!empty($_POST['dniC']) and is_numeric($_POST['dniC']))   {
         $dni=$_POST['dniC'];
@@ -95,6 +91,7 @@ if (!empty($_POST['validarC']) and !empty($_POST['dniCliente']) and is_numeric($
             $_SESSION['idcliente']=$datos->id;
             $_SESSION['nombre_P']=$datos->nombre_P;
             $_SESSION['apellido_P']=$datos->apellido_P;
+            $_SESSION['dni_P']=$datos->dni_P;
     }
 
 
