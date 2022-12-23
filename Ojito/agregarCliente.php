@@ -1,8 +1,12 @@
 <?php
 require '../conexion.php';
+echo "al ajax llega1";
+if (isset($_POST['buscarC'])) {
+    echo 'llega dentro del if';}
+// ------- Boton Agregar Cliente ------------
 
 if (isset($_POST['agregarCliente'])) {
-    echo 'holi';
+   
 if (!empty($_POST['dniC']) and is_numeric($_POST['dniC']))   {
     $dni=$_POST['dniC'];
     $sql=$conexion->query(" SELECT dni_P FROM pacientes WHERE dni_P='$dni' ");
@@ -24,6 +28,11 @@ else {
     echo "<div class='alert alert-danger'>Datos Erroneos </div>";
 } 
 }
+
+// - ------ Boton Buscar Cliente ------------
+
+
+
 
 
 

@@ -192,7 +192,7 @@ if (!empty($_SESSION['id'])) {
                     <td>
                         <table class="table table-borderless" id="tablaGracuadiones">
                             <form id="graduaciones">
-                                <div id="okGrad"></div>
+                                <div id="okGrad">
                                 <tr>
                                     <td><b>Graduacion Cerca </b></td>
                                 </tr>
@@ -214,6 +214,7 @@ if (!empty($_SESSION['id'])) {
                                 <tr>
                                     <td><b>ADD: &nbsp</b><input name="add" type="text" size="4"></td>
                                 </tr>
+                                </div>
                             </form>
                         </table>
                     </td>

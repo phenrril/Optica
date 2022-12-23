@@ -152,17 +152,21 @@ if (!empty($_SESSION['id'])) {
                                 <table WIDTH="50%" class="table table-borderless">
                                     <tr>
                                         <th></th>
-                                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="enviardatos">
+                                        <form method="post" id="enviardatos">
                                             <?php require "../conexion.php";
                                             include "../controlador/controlador_clientes.php"; //buscar clientes ?> 
                                     </tr>
                                     <tr>
-                                        <div id="agregar"></div>
+                                    <div id="agregar">
                                         <td>DNI</td>
-                                        <td><input id="text" placeholder="coloque DNI" name="dniC" id="dniId"type="text" class="form-control" spellcheck="false" data-ms-editor="true" autofocus></td>
+                                        <td><input id="text" placeholder="coloque DNI" name="dniC" id="dniC" type="text" class="form-control" autofocus></td>
                                     </tr>
-                                    <th scope="row" width="25%"><input value="Buscar Cliente" name="buscarC" id="buscarC" type="button"></th>
+                                    <th scope="row" width="25%"><input type="button" value="Buscar Cliente" id="buscarC" ></th>
+                                    <th scope="row" width="25%"><input type="button" value="Agregar Cliente" id="agregarC" ></th>
                                     
+                                    <th scope="row" width="25%"><input type="submit" value="Cancelar" id="buscarC" ></th>
+                                    <th scope="row" width="25%"><input type="button" value="ir a Cobros" id="irCobros" hidden></th>
+                                    </div>
                                     </form>
                         </tr>
                         </tbody>
@@ -215,9 +219,9 @@ if (!empty($_SESSION['id'])) {
     </div>
 
     <script >   
-    $("#agregarC").click(function(){   
+    $("#buscarC").click(function(){   
             $.ajax({
-                    url: "agregarCliente.php",
+                    url: "buscarCliente.php",
                     type: "post",
                     data: $("#enviardatos").serialize(),
                     success: function(agregar){
