@@ -1,4 +1,5 @@
 <?php
+global $conexion;
 require_once "../conexion.php";
 session_start();
 
@@ -19,7 +20,6 @@ if (isset($_GET['q'])) {
 }else if (isset($_GET['pro'])) {
     $datos = array();
     $nombre = $_GET['pro'];
-    //$producto = mysqli_query($conexion, "SELECT * FROM producto WHERE codigo LIKE '%" . $nombre . "%' OR descripcion LIKE '%" . $nombre . "%' AND estado = 1");
     $producto = mysqli_query($conexion, "SELECT * FROM producto WHERE codigo LIKE '%$nombre%'AND estado = 1 and existencia >0 OR descripcion LIKE '%$nombre%' AND estado =1 and existencia >0");
     while ($row = mysqli_fetch_assoc($producto)) {
         $data['id'] = $row['codproducto'];
@@ -80,7 +80,6 @@ if (isset($_GET['q'])) {
     if($obrasocial == ""){
         $obrasocial = 0; 
     }
-    //$consulta = mysqli_query($conexion, "SELECT total, SUM(total) AS total_pagar FROM detalle_temp WHERE id_usuario = $id_user");
     $consulta = mysqli_query($conexion,"SELECT SUM(total) AS total_pagar FROM detalle_temp WHERE id_usuario = $id_user");
     $result = mysqli_fetch_assoc($consulta);   
     $total = (($result['total_pagar'] - $obrasocial) * $descuento); 
@@ -88,6 +87,7 @@ if (isset($_GET['q'])) {
     if ($abona > $total) {
         die();
     }
+
     $resto = $total - $abona;
     $insertar = mysqli_query($conexion, "INSERT INTO ventas(id_cliente, total, id_usuario, abona, resto, obrasocial, fecha, id_metodo) VALUES ('$id_cliente', '$total', '$id_user', '$abona', '$resto', '$obrasocial', '$fecha', '$metodo_pago')");
     
@@ -96,7 +96,7 @@ if (isset($_GET['q'])) {
         $resultId = mysqli_fetch_assoc($id_maximo);
         $ultimoId = $resultId['total'];
         $ultimoId2 = $resultId['id'];
-        $insertar_metodo = mysqli_query($conexion, "INSERT INTO ingresos(ingresos, fecha, id_venta, id_cliente, id_metodo) VALUES ('$abona', '$fecha','$ultimoId2','$id_cliente','$metodo_pago' )");        
+        $insertar_metodo = mysqli_query($conexion, "INSERT INTO ingresos(ingresos, fecha, id_venta, id_cliente, id_metodo) VALUES ('$abona', '$fecha','$ultimoId2','$id_cliente','$metodo_pago' )");
         $consultaDetalle = mysqli_query($conexion, "SELECT * FROM detalle_temp WHERE id_usuario = $id_user");
         $consultaDetalle2 = mysqli_query($conexion, "SELECT * FROM graduaciones_temp WHERE id_usuario = $id_user");
         while ($row = mysqli_fetch_assoc($consultaDetalle)) {

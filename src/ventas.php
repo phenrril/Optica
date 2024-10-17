@@ -41,6 +41,7 @@ if (empty($existe) && $id_user != 1) {
                             <div class="form-group">
                                 <label>Obra Social</label>
                                 <input type="text" name="obrasocial" id="obrasocial" class="form-control" disabled required>
+                                <button type="button" class="btn btn-secondary mt-2">ver HC</button>
                             </div>
                         </div>
                     </div>
@@ -56,10 +57,16 @@ if (empty($existe) && $id_user != 1) {
                     <div class="col-lg-6">
                         <div class="form-group">
                             Vendedor <i class="fas fa-user"></i><p style="font-size: 16px; text-transform: uppercase; color: red;"><?php echo $_SESSION['nombre']; ?></p>
-                            <label> <b>Graduacion Lejos &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                &nbsp&nbsp&nbsp Graduacion Cerca</b> </label>
+                            <label>
+                                <b class="graduacion-label">Graduacion Lejos</b>
+                                <b class="graduacion-label">Graduacion Cerca</b>
+                            </label>
+                            <style>
+                                .graduacion-label {
+                                    display: inline-block;
+                                    margin-right: 250px; /* Ajusta este valor según sea necesario */
+                                }
+                            </style>
                             <p style="font-size: 16px; text-transform: uppercase; color: black;">
                             <table class="table table-borderless" id="tablaGracuadiones">
                             <form id="graduaciones">
@@ -99,7 +106,6 @@ if (empty($existe) && $id_user != 1) {
                                     <td><form type="post"id="borrar_grad"><input class="btn btn-danger" type="hidden" value="Borrar Graduaciones"id="borrar_grad"></form></td>
                                     
                                 </tr>
-                              
                                 
                             
                             </form>

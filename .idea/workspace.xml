@@ -1,6 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c8c4f384-b1f4-43f9-bf50-193dd37de8da" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpDebugGeneral" break_at_first_line="true" ignore_connections_through_unregistered_servers="false" />
+  <component name="PhpServers">
+    <servers>
+      <server host="localhost" id="d4672219-b9ab-4a7b-88e0-447d91d6dc84" name="server1" port="8080" />
+      <server host="localhost" id="10409b71-4af0-4d05-bf5b-43b2f306bba7" name="localhost" />
+      <server host="PhpStorm 2024.2.3" id="6b7ca4e2-572f-494a-8f06-744e89339ab6" name="PhpStorm 2024.2.3" port="63342" />
+    </servers>
+  </component>
+  <component name="PhpWebServerValidation" path_to_validation_script="C:\xampp" selected_validation_type="LOCAL" web_path_to_validation_script="http://127.0.0.1/" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\xampp\php\php.exe" />
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2lOgtVMmddpIIUOl8nB59O6DRZk" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "PHP Script.ajax.php.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature/historia-clinica",
+    "last_opened_file_path": "C:/xampp/htdocs/Optica",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Optica" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PS-242.23339.16" />
+        <option value="bundled-php-predefined-a98d8de5180a-90914f2295cb-com.jetbrains.php.sharedIndexes-PS-242.23339.16" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c8c4f384-b1f4-43f9-bf50-193dd37de8da" name="Changes" comment="" />
+      <created>1725056753450</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1725056753450</updated>
+      <workItem from="1725056756297" duration="2146000" />
+      <workItem from="1725059163309" duration="16000" />
+      <workItem from="1725059195688" duration="17000" />
+      <workItem from="1725059295724" duration="516000" />
+      <workItem from="1725062097556" duration="2160000" />
+      <workItem from="1725064703963" duration="4723000" />
+      <workItem from="1725143775081" duration="4645000" />
+      <workItem from="1725833749176" duration="327000" />
+      <workItem from="1725834313355" duration="1527000" />
+      <workItem from="1726467185724" duration="55000" />
+      <workItem from="1726467255453" duration="40000" />
+      <workItem from="1726467305962" duration="47000" />
+      <workItem from="1726467369612" duration="43000" />
+      <workItem from="1729032787572" duration="84000" />
+      <workItem from="1729033374326" duration="4257000" />
+      <workItem from="1729142797146" duration="4549000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/assets/js/funciones.js</url>
+          <line>80</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
