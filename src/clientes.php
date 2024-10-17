@@ -1,4 +1,5 @@
-<?php include_once "includes/header.php";
+<?php global $conexion;
+include_once "includes/header.php";
 include "../conexion.php";
 $id_user = $_SESSION['idUser'];
 $permiso = "clientes";
@@ -80,9 +81,19 @@ if (!empty($_POST)) {
                         <td><?php echo $data['nombre']; ?></td>
                         <td><?php echo $data['telefono']; ?></td>
                         <td><?php echo $data['direccion']; ?></td>             
-                        <td><?php echo $data['dni']; ?></td>
+                        <td>
+                        <?php if (empty($data['dni']) || $data['dni'] === '-'): ?>
+                            <button class="btn btn-warning" onclick="agregarDNI(<?php echo $data['idcliente']; ?>)">Agregar DNI</button>
+                        <?php else: ?>
+                            <?php echo $data['dni']; ?>
+                        <?php endif; ?>
+                        </td>
                         <td><?php echo $data['obrasocial']; ?></td>
                         <td><?php echo $data['medico']; ?></td>
+                        <td>
+                            <?php echo isset($data['HC']) ? $data['HC'] : ''; ?>
+                            <button class="btn btn-info" data-dni="<?php echo $data['dni']; ?>" onclick="abrirHistClinica(this)">Hist. Clinica</button>
+                        </td>
                         <td><?php echo $estado; ?></td>
                         <td>
                             <?php if ($data['estado'] == 1) { ?>
@@ -150,3 +161,173 @@ if (!empty($_POST)) {
     </div>
 </div>
 <?php include_once "includes/footer.php"; ?>
+
+<script>
+function abrirHistClinica(button) {
+    var dniCliente = button.getAttribute('data-dni');
+    $.ajax({
+        url: 'historia_clinica.php',
+        type: 'GET',
+        data: { dni: dniCliente },
+        success: function(response) {
+            $('#histClinicaModal').remove();
+
+            var popupContent = '<div class="modal fade" id="histClinicaModal" tabindex="-1" role="dialog" aria-labelledby="histClinicaModalLabel" aria-hidden="true">' +
+                               '<div class="modal-dialog modal-dialog-centered modal-lg" role="document">' +
+                               '<div class="modal-content">' +
+                               '<div class="modal-header">' +
+                               '<h5 class="modal-title" id="histClinicaModalLabel">Historia Clínica</h5>' +
+                               '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
+                               '<span aria-hidden="true">&times;</span>' +
+                               '</button>' +
+                               '</div>' +
+                               '<div class="modal-body">' +
+                               '<div class="table-responsive">' +
+                               '<table class="table table-striped">' +
+                               '<thead>' +
+                               '<tr>' +
+                               '<th>Fecha</th>' +
+                               '<th>Ojo Derecho L1</th>' +
+                               '<th>Ojo Derecho L2</th>' +
+                               '<th>Ojo Derecho L3</th>' +
+                               '<th>Ojo Derecho C1</th>' +
+                               '<th>Ojo Derecho C2</th>' +
+                               '<th>Ojo Derecho C3</th>' +
+                               '<th>Ojo Izquierdo L1</th>' +
+                               '<th>Ojo Izquierdo L2</th>' +
+                               '<th>Ojo Izquierdo L3</th>' +
+                               '<th>Ojo Izquierdo C1</th>' +
+                               '<th>Ojo Izquierdo C2</th>' +
+                               '<th>Ojo Izquierdo C3</th>' +
+                               '<th>Addg</th>' +
+                               '<th>Armazón</th>' +
+                               '<th>Precio</th>' +
+                               '<th>Observaciones</th>' +
+                               '</tr>' +
+                               '</thead>' +
+                               '<tbody>' + response + '</tbody>' +
+                               '</table>' +
+                               '</div>' +
+                               '</div>' +
+                               '<div class="modal-footer">' +
+                               '<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>' +
+                               '<button type="button" class="btn btn-primary" onclick="agregarFila()">Agregar Información</button>' +
+                               '<button type="button" class="btn btn-success" onclick="guardarInformacion()">Guardar</button>' +
+                               '</div>' +
+                               '</div>' +
+                               '</div>' +
+                               '</div>';
+            $('body').append(popupContent);
+            $('#histClinicaModal').modal('show');
+        }
+    });
+}
+
+function agregarFila() {
+    var newRow = '<tr>' +
+                 '<td><input type="date" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="date" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="number" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '</tr>';
+    $('#histClinicaModal tbody').append(newRow);
+}
+
+function guardarInformacion() {
+    var rows = $('#histClinicaModal tbody tr');
+    var data = [];
+
+    rows.each(function() {
+        var row = $(this);
+        var rowData = {
+            dni_cliente: row.find('input[name="dni_cliente"]').val(),
+            fecha: row.find('input[name="fecha"]').val(),
+            od_l_1: row.find('input[name="od_l_1"]').val(),
+            od_l_2: row.find('input[name="od_l_2"]').val(),
+            od_l_3: row.find('input[name="od_l_3"]').val(),
+            od_c_1: row.find('input[name="od_c_1"]').val(),
+            od_c_2: row.find('input[name="od_c_2"]').val(),
+            od_c_3: row.find('input[name="od_c_3"]').val(),
+            oi_l_1: row.find('input[name="oi_l_1"]').val(),
+            oi_l_2: row.find('input[name="oi_l_2"]').val(),
+            oi_l_3: row.find('input[name="oi_l_3"]').val(),
+            oi_c_1: row.find('input[name="oi_c_1"]').val(),
+            oi_c_2: row.find('input[name="oi_c_2"]').val(),
+            oi_c_3: row.find('input[name="oi_c_3"]').val(),
+            addg: row.find('input[name="addg"]').val(),
+            armazon: row.find('input[name="armazon"]').val(),
+            precio: row.find('input[name="precio"]').val(),
+            observaciones: row.find('input[name="observaciones"]').val()
+        };
+        data.push(rowData);
+    });
+
+    $.ajax({
+        url: 'guardar_historia_clinica.php',
+        type: 'POST',
+        data: { data: JSON.stringify(data) },
+        success: function(response) {
+            if (response === 'success') {
+                alert('Información guardada correctamente');
+                $('#histClinicaModal').modal('hide');
+            } else {
+                alert('Error al guardar la información');
+            }
+        }
+    });
+}
+
+function agregarFila() {
+    var newRow = '<tr>' +
+                 '<td><input type="date" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '<td><input type="number" class="form-control"></td>' +
+                 '<td><input type="text" class="form-control"></td>' +
+                 '</tr>';
+    $('#histClinicaModal tbody').append(newRow);
+}
+
+function agregarDNI(idCliente) {
+    var nuevoDNI = prompt("Ingrese el nuevo DNI:");
+    if (nuevoDNI) {
+        $.ajax({
+            url: 'agregar_dni.php',
+            type: 'POST',
+            data: { id: idCliente, dni: nuevoDNI },
+            success: function(response) {
+                if (response === 'success') {
+                    location.reload();
+                } else {
+                    alert("Error al agregar DNI");
+                }
+            }
+        });
+    }
+}
+</script>
