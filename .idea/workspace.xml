@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8c4f384-b1f4-43f9-bf50-193dd37de8da" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/base ojitos.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/agregar_dni.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/guardar_historia_clinica.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/historia_clinica.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/conexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ajax.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clientes.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ventas.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ventas.php" afterDir="false" />
-    </list>
+    <list default="true" id="c8c4f384-b1f4-43f9-bf50-193dd37de8da" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,7 +89,7 @@
       <workItem from="1726467369612" duration="43000" />
       <workItem from="1729032787572" duration="84000" />
       <workItem from="1729033374326" duration="4257000" />
-      <workItem from="1729142797146" duration="4228000" />
+      <workItem from="1729142797146" duration="4549000" />
     </task>
     <servers />
   </component>
